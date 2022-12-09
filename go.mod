@@ -1,9 +1,9 @@
-module go_blok
+module go_blog
 
 go 1.15
 
 require (
-	github.com/go-sql-driver/mysql v1.6.0 // indirect
+	github.com/gogf/gf/contrib/drivers/mysql/v2 v2.2.5
 	github.com/gogf/gf/v2 v2.2.5
-	github.com/longbridgeapp/sqlparser v0.3.1 // indirect
+	github.com/jinzhu/copier v0.3.5
 )

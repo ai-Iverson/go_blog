@@ -1,11 +1,39 @@
 server:
-  address:     ":8000"
+  address:     ":8090"
   openapiPath: "/api.json"
   swaggerPath: "/swagger"
 
+  # Database.
+database:
+  logger:
+    level: "all"
+  default:
+    link: "mysql:root:123456@tcp(127.0.0.1:3307)/go_blok"
+    debug: true
+    updatedAt: "updated_at"
+
+
+token:
+  timeout: 6000000  # 单位：毫秒,10分钟
+  cacheMode: 2  # 使用的缓存模式，1为内存模式，2为redis模式，默认为1
+
+
+# Redis数据库配置
+redis:
+  default:
+    address: "127.0.0.1:6379"
+    db: 0
+
 logger:
-  level : "all"
-  stdout: true
+  path: "./log/my-goframe/"
+  file: "{Y-m-d}.log"
+  level: "all"
+  rotateExpire: "1d"  # 一天一个回滚
+  rotateBackupLimit: 7   # 保留7个日志文件
+  writerColorEnable: true  # 日志文件带有颜色
+  RotateBackupCompress: 9  # 日志文件压缩级别，0-9,9最高
+  globalStdout: true  # 自定义key,是否输出到标准输出
+  Flags: 44 #日期 时:分:秒:毫秒 文件:行号
 
 
 
