@@ -5,7 +5,7 @@ import (
 
 	"github.com/gogf/gf/v2/frame/g"
 
-	"go_blok/api/v1"
+	"go_blog/api/v1"
 )
 
 var (
