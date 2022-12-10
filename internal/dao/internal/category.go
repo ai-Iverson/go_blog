@@ -20,14 +20,14 @@ type CategoryDao struct {
 
 // CategoryColumns defines and stores column names for table category.
 type CategoryColumns struct {
-	Id           string //
-	CategoryName string //
+	Id   string //
+	Name string //
 }
 
 //  categoryColumns holds the columns for table category.
 var categoryColumns = CategoryColumns{
-	Id:           "id",
-	CategoryName: "category_name",
+	Id:   "id",
+	Name: "name",
 }
 
 // NewCategoryDao creates and returns a new DAO object for table data access.

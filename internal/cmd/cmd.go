@@ -42,6 +42,8 @@ var (
 				group.Bind(
 					controller.Hello,
 					controller.User.Login,
+					controller.Index.CategoryAndTag,
+					controller.Index.Tags,
 				)
 			})
 			s.Group("/", func(group *ghttp.RouterGroup) {
@@ -49,6 +51,9 @@ var (
 				//group.Middleware(service.Middleware().ApiAuth)
 				group.Bind(
 					controller.Dashboart.Dashboart,
+					controller.Tags.AddTags,
+					controller.Tags.UpdateTags,
+					controller.Tags.DeleteTags,
 				)
 			})
 			s.Run()
