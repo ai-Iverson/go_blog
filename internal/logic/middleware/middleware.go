@@ -123,20 +123,3 @@ func (s *sMiddleware) TokenAuth(r *ghttp.Request) {
 	service.Context().SetToken(r.Context(), myCacheToken)
 	r.Middleware.Next()
 }
-
-// ApiAuth API鉴权中间件
-//func (s *sMiddleware) ApiAuth(r *ghttp.Request) {
-//	ctx := r.Context()
-//	//glog.Info(ctx, "请求路径为: ", r.URL.Path)
-//	//user := service.Context().Get(ctx)
-//	//glog.Info(ctx, "登录用户为: ", user.Token.UserKey)
-//	if service.CasbinRole().Verify(ctx, r.URL.Path, r.Method) {
-//		glog.Info(ctx, "超级管理员登录: ", r.URL.Path, r.Method)
-//		r.Middleware.Next()
-//	} else {
-//		// TODO 验证不是超级管理员的权限
-//		r.Response.WriteJson("你没有权限访问")
-//		gerror.New("你没有权限访问")
-//	}
-//
-//}

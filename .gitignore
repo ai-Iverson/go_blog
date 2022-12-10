@@ -18,3 +18,5 @@ main
 output/
 manifest/output/
 temp/
+go.mod
+go.sum

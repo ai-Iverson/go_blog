@@ -6,6 +6,6 @@ package entity
 
 // Category is the golang structure for table category.
 type Category struct {
-	Id           int64  `json:"id"           description:""`
-	CategoryName string `json:"categoryName" description:""`
+	Id   int64  `json:"id"   description:""`
+	Name string `json:"name" description:""`
 }

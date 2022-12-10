@@ -20,16 +20,16 @@ type TagDao struct {
 
 // TagColumns defines and stores column names for table tag.
 type TagColumns struct {
-	Id      string //
-	TagName string //
-	Color   string // 标签颜色(可选)
+	Id    string //
+	Name  string //
+	Color string // 标签颜色(可选)
 }
 
 //  tagColumns holds the columns for table tag.
 var tagColumns = TagColumns{
-	Id:      "id",
-	TagName: "tag_name",
-	Color:   "color",
+	Id:    "id",
+	Name:  "name",
+	Color: "color",
 }
 
 // NewTagDao creates and returns a new DAO object for table data access.
