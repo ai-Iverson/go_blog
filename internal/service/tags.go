@@ -7,10 +7,12 @@ package service
 import (
 	"context"
 	"go_blog/internal/model"
+	"go_blog/internal/model/entity"
 )
 
 type ITags interface {
-	Tags(ctx context.Context, page, size int) (out *model.AllTagsOutput, err error)
+	GetTagsList(ctx context.Context) (out []*entity.Tag, err error)
+	ShowTags(ctx context.Context, page, size int) (out *model.AllTagsOutput, err error)
 	AddTags(ctx context.Context, name, color string) (err error)
 	UpdateTags(ctx context.Context, id int, name, color string) (err error)
 	DeleteTags(ctx context.Context, id int) (err error)

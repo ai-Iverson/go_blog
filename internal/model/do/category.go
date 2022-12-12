@@ -10,7 +10,7 @@ import (
 
 // Category is the golang structure of table category for DAO operations like Where/Data.
 type Category struct {
-	g.Meta `orm:"table:category, do:true"`
-	Id     interface{} //
-	Name   interface{} //
+	g.Meta       `orm:"table:category, do:true"`
+	Id           interface{} //
+	CategoryName interface{} //
 }

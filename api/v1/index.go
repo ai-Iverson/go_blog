@@ -34,7 +34,7 @@ type CategoryAndTagRes struct {
 }
 
 type Categories struct {
-	Id    int      `json:"id"`
-	Name  string   `json:"name"`
-	Blogs []string `json:"blogs"`
+	Id           int      `json:"id"`
+	Categoryname string   `json:"name"`
+	Blogs        []string `json:"blogs"`
 }

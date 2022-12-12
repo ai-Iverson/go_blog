@@ -4,12 +4,12 @@ import (
 	"context"
 	"github.com/gogf/gf/v2/os/glog"
 	"github.com/gogf/gf/v2/util/gconv"
-	v1 "go_blog/api/v1"
 	"go_blog/internal/dao"
 	"go_blog/internal/errorcode"
 	"go_blog/internal/model"
 	"go_blog/internal/model/entity"
 	"go_blog/internal/service"
+	"go_blog/utility/utils"
 )
 
 type sTags struct {
@@ -23,22 +23,39 @@ func New() *sTags {
 	return &sTags{}
 }
 
-func (s *sTags) Tags(ctx context.Context, page, size int) (out *model.AllTagsOutput, err error) {
+func (s *sTags) GetTagsList(ctx context.Context) (out []*entity.Tag, err error) {
+	err = dao.Tag.Ctx(ctx).Scan(&out)
+	return
+}
+
+func (s *sTags) ShowTags(ctx context.Context, page, size int) (out *model.AllTagsOutput, err error) {
 	out = &model.AllTagsOutput{}
-	out.List = []v1.Tags{}
-	m := dao.Tag.Ctx(ctx).Page(page, size)
-	allTags, _ := m.All()
-	total, _ := m.Count()
-	out.Total = gconv.Int(total)
-	err = allTags.Structs(&out.List)
-	glog.Info(ctx, "sdf", out)
+	t := dao.Tag.Ctx(ctx)
+	// 总数
+	count, err := t.Count()
+	if err != nil {
+		return nil, err
+	}
+
+	result, err := dao.Tag.Ctx(ctx).Page(page, size).All()
+	if err != nil {
+		return nil, err
+	}
+
+	pagination, err := utils.Pagination(ctx, page, size, gconv.Int(count), len(result))
+	if err != nil {
+		return nil, err
+	}
+	utils.MyCopy(ctx, &out, pagination)
+	err = gconv.Structs(result, &out.List)
+
 	return
 }
 
 func (s *sTags) AddTags(ctx context.Context, name, color string) (err error) {
 	_, err = dao.Tag.Ctx(ctx).Data(entity.Tag{
-		Name:  name,
-		Color: color,
+		TagName: name,
+		Color:   color,
 	}).Insert()
 	if err != nil {
 		glog.Error(ctx, err)
@@ -50,8 +67,8 @@ func (s *sTags) AddTags(ctx context.Context, name, color string) (err error) {
 
 func (s *sTags) UpdateTags(ctx context.Context, id int, name, color string) (err error) {
 	_, err = dao.Tag.Ctx(ctx).Where(dao.Tag.Columns().Id, id).Update(entity.Tag{
-		Name:  name,
-		Color: color,
+		TagName: name,
+		Color:   color,
 	})
 	if err != nil {
 		glog.Error(ctx, err)

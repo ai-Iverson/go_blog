@@ -6,7 +6,7 @@ package entity
 
 // Tag is the golang structure for table tag.
 type Tag struct {
-	Id    int64  `json:"id"    description:""`
-	Name  string `json:"name"  description:""`
-	Color string `json:"color" description:"标签颜色(可选)"`
+	Id      int64  `json:"id"      description:""`
+	TagName string `json:"tagName" description:""`
+	Color   string `json:"color"   description:"标签颜色(可选)"`
 }

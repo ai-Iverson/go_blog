@@ -10,8 +10,8 @@ import (
 
 // Tag is the golang structure of table tag for DAO operations like Where/Data.
 type Tag struct {
-	g.Meta `orm:"table:tag, do:true"`
-	Id     interface{} //
-	Name   interface{} //
-	Color  interface{} // 标签颜色(可选)
+	g.Meta  `orm:"table:tag, do:true"`
+	Id      interface{} //
+	TagName interface{} //
+	Color   interface{} // 标签颜色(可选)
 }
