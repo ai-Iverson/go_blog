@@ -58,6 +58,9 @@ var (
 					controller.Category.AddCategory,
 					controller.Category.UpdateCategory,
 					controller.Category.DeleteCategory,
+					controller.Blog.CreateBlog,
+					controller.Blog.ShowBlogs,
+					controller.Blog.BlogDetail,
 				)
 			})
 			s.Run()

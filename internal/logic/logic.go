@@ -5,6 +5,7 @@
 package logic
 
 import (
+	_ "go_blog/internal/logic/blog"
 	_ "go_blog/internal/logic/category"
 	_ "go_blog/internal/logic/context"
 	_ "go_blog/internal/logic/middleware"
