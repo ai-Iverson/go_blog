@@ -71,13 +71,15 @@ func (s *sBlog) BlogsList(ctx context.Context, page, size int) (out *model.Blogs
 	if err != nil {
 		return nil, err
 	}
-
+	// 分页信息
 	pagination, err := utils.Pagination(ctx, page, size, gconv.Int(count), len(result))
 	utils.MyCopy(ctx, &out, pagination)
 
 	err = gconv.Scan(result, &out.List)
-
-	err = dao.Category.Ctx(ctx).Where(dao.Category.Columns().Id, gdb.ListItemValuesUnique(out.List, "CategoryId")).ScanList(&out.List, "Category")
+	// 查询每个blog的categroy信息
+	err = dao.Category.Ctx(ctx).
+		Where(dao.Category.Columns().Id, gdb.ListItemValuesUnique(out.List, "CategoryId")).
+		ScanList(&out.List, "Category", "id:CategoryId")
 	return
 
 }
@@ -89,10 +91,10 @@ func (s *sBlog) BlogDetail(ctx context.Context, id int) (out *model.BlogDetailOu
 		return
 	}
 
-	err = dao.Category.Ctx(ctx).Where(dao.Category.Columns().Id, out.CategoryId)
-	if err != nil {
-		return
-	}
+	//err = dao.Category.Ctx(ctx).Where(dao.Category.Columns().Id, out.CategoryId)
+	//if err != nil {
+	//	return
+	//}
 
 	tagList := []*entity.BlogTag{}
 	err = dao.BlogTag.Ctx(ctx).Where(dao.BlogTag.Columns().BlogId, id).Scan(&tagList)

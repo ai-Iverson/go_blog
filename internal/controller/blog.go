@@ -48,7 +48,6 @@ func (c cBlog) ShowBlogs(ctx context.Context, req *v1.ShowBlogsReq) (res *v1.Sho
 	blogList, err := service.Blog().BlogsList(ctx, req.PageNum, req.PageSize)
 
 	err = gconv.Scan(blogList, &res.Blogs)
-	glog.Info(ctx, res)
 
 	// 分类列表
 	categoryList, err := service.Category().GetCategoryList(ctx)
@@ -56,12 +55,19 @@ func (c cBlog) ShowBlogs(ctx context.Context, req *v1.ShowBlogsReq) (res *v1.Sho
 	if err != nil {
 		return nil, err
 	}
+
+	// 所有categroy
 	for _, category := range categoryList {
 		res.Categories = append(res.Categories, v1.Categories{
 			Id:           gconv.Int(category.Id),
 			Categoryname: category.CategoryName,
 			Blogs:        []string{},
 		})
+	}
+
+	// 添加blog []
+	for i := 0; i < len(res.Blogs.List); i++ {
+		res.Blogs.List[i].Category.Blogs = []string{}
 	}
 	return
 }

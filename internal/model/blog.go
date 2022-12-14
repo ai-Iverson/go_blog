@@ -37,7 +37,7 @@ type Blog struct {
 	Words            interface{} `json:"words"`
 	ReadTime         interface{} `json:"readTime"`
 	Password         string      `json:"password"`
-	User             interface{} `json:"user"`
+	UserId           interface{} `json:"user"`
 	CategoryId       int64       `json:"categoryId"`
 	Category         struct {
 		ID           int           `json:"id"`
@@ -70,6 +70,7 @@ type BlogDetailOutput struct {
 	ReadTime       int         `json:"readTime"`
 	Password       string      `json:"password"`
 	User           interface{} `json:"user"`
+	CategoryId     int64       `json:"categoryId"`
 	Category       Categories  `json:"category"`
 	Tags           []Tags      `json:"tags"`
 }
