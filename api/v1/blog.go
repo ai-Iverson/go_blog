@@ -130,3 +130,13 @@ type UpdateBlogVisibilityReq struct {
 
 type UpdateBlogVisibilityRes struct {
 }
+
+type UpdateBlogReq struct {
+	g.Meta        `path:"/admin/blog" method:"put" summart:"更新文章" tags:"更新文章"`
+	Authorization string `json:"Authorization" in:"header"  dc:"Authorization"`
+	Id            int    `json:"id"`
+	CreateBlogReq
+}
+
+type UpdateBlogRes struct {
+}

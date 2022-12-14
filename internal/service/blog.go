@@ -6,11 +6,13 @@ package service
 
 import (
 	"context"
+	v1 "go_blog/api/v1"
 	"go_blog/internal/model"
 )
 
 type IBlog interface {
 	CreateBlog(ctx context.Context, in model.CreateBlogInput) (err error)
+	UpdateBlog(ctx context.Context, in v1.UpdateBlogReq) (err error)
 	BlogsList(ctx context.Context, title string, categroyId, page, size int) (out *model.BlogsListOutput, err error)
 	BlogDetail(ctx context.Context, id int) (out *model.BlogDetailOutput, err error)
 	UpdateBlogTop(ctx context.Context, blogId int, top bool) (err error)
