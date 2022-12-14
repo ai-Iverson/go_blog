@@ -33,6 +33,7 @@ type Blogs struct {
 
 type CreateBlogReq struct {
 	g.Meta         `path:"/admin/blog" method:"post" summart:"写文章" tags:"写文章"`
+	Authorization  string `json:"Authorization" in:"header"  dc:"Authorization"`
 	Title          string `json:"title"`
 	FirstPicture   string `json:"firstPicture"`
 	Description    string `json:"description"`
@@ -54,11 +55,12 @@ type CreateBlogRes struct {
 }
 
 type ShowBlogsReq struct {
-	g.Meta     `path:"/admin/blogs" method:"get" summart:"展示文章列表" tags:"展示文章列表"`
-	Title      string `json:"title"`
-	CategoryId int    `json:"categoryId"`
-	PageNum    int    `json:"pageNum"`
-	PageSize   int    `json:"pageSize"`
+	g.Meta        `path:"/admin/blogs" method:"get" summart:"展示文章列表" tags:"展示文章列表"`
+	Authorization string `json:"Authorization" in:"header"  dc:"Authorization"`
+	Title         string `json:"title"`
+	CategoryId    int    `json:"categoryId"`
+	PageNum       int    `json:"pageNum"`
+	PageSize      int    `json:"pageSize"`
 }
 
 type ShowBlogsRes struct {
@@ -67,8 +69,9 @@ type ShowBlogsRes struct {
 }
 
 type BlogDetailReq struct {
-	g.Meta `path:"/admin/blog" method:"get" summart:"文章详情" tags:"文章详情"`
-	Id     int `json:"id"`
+	g.Meta        `path:"/admin/blog" method:"get" summart:"文章详情" tags:"文章详情"`
+	Authorization string `json:"Authorization" in:"header"  dc:"Authorization"`
+	Id            int    `json:"id"`
 }
 
 type BlogDetailRes struct {
@@ -94,10 +97,36 @@ type BlogDetailRes struct {
 }
 
 type UpdateBlogTopReq struct {
-	g.Meta `path:"/admin/blog/top" method:"put" summart:"修改文章置顶信息" tags:"修改文章置顶信息"`
-	Id     int  `json:"id"`
-	Top    bool `json:"top"`
+	g.Meta        `path:"/admin/blog/top" method:"put" summart:"修改文章置顶信息" tags:"修改文章置顶信息"`
+	Authorization string `json:"Authorization" in:"header"  dc:"Authorization"`
+	Id            int    `json:"id"`
+	Top           bool   `json:"top"`
 }
 
 type UpdateBlogTopRes struct {
+}
+
+type UpdateBlogRecommendReq struct {
+	g.Meta        `path:"/admin/blog/recommend" method:"put" summart:"修改文章推荐信息" tags:"修改文章推荐信息"`
+	Authorization string `json:"Authorization" in:"header"  dc:"Authorization"`
+	Id            int    `json:"id"`
+	Top           bool   `json:"top"`
+}
+
+type UpdateBlogRecommendRes struct {
+}
+
+type UpdateBlogVisibilityReq struct {
+	g.Meta         `path:"/admin/blog/{Id}/visibility" method:"put" summart:"修改文章可见性信息" tags:"修改文章可见性信息"`
+	Authorization  string `json:"Authorization" in:"header"  dc:"Authorization"`
+	Id             int    `json:"id" in:"path" dc:"文章id"`
+	Appreciation   bool   `json:"appreciation" dc:"赞赏"`
+	Recommend      bool   `json:"recommend" dc:"推荐"`
+	CommentEnabled bool   `json:"commentEnabled" dc:"评论"`
+	Top            bool   `json:"top" dc:"置顶"`
+	Published      bool   `json:"published" dc:"是否公开"`
+	Password       string `json:"password" dc:"私密密码"`
+}
+
+type UpdateBlogVisibilityRes struct {
 }
