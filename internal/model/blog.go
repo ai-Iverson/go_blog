@@ -1,6 +1,9 @@
 package model
 
-import v1 "go_blog/api/v1"
+import (
+	v1 "go_blog/api/v1"
+	"go_blog/internal/model/entity"
+)
 
 type CreateBlogInput struct {
 	Title            string // 文章标题
@@ -53,24 +56,24 @@ type BlogsListOutput struct {
 }
 
 type BlogDetailOutput struct {
-	ID             int         `json:"id"`
-	Title          string      `json:"title"`
-	FirstPicture   string      `json:"firstPicture"`
-	Content        string      `json:"content"`
-	Description    string      `json:"description"`
-	Published      bool        `json:"published"`
-	Recommend      bool        `json:"recommend"`
-	Appreciation   bool        `json:"appreciation"`
-	CommentEnabled bool        `json:"commentEnabled"`
-	Top            bool        `json:"top"`
-	CreateTime     string      `json:"createTime"`
-	UpdateTime     string      `json:"updateTime"`
-	Views          int         `json:"views"`
-	Words          int         `json:"words"`
-	ReadTime       int         `json:"readTime"`
-	Password       string      `json:"password"`
-	User           interface{} `json:"user"`
-	CategoryId     int64       `json:"categoryId"`
-	Category       Categories  `json:"category"`
-	Tags           []Tags      `json:"tags"`
+	ID             int          `json:"id"`
+	Title          string       `json:"title"`
+	FirstPicture   string       `json:"firstPicture"`
+	Content        string       `json:"content"`
+	Description    string       `json:"description"`
+	Published      bool         `json:"published"`
+	Recommend      bool         `json:"recommend"`
+	Appreciation   bool         `json:"appreciation"`
+	CommentEnabled bool         `json:"commentEnabled"`
+	Top            bool         `json:"top"`
+	CreateTime     string       `json:"createTime"`
+	UpdateTime     string       `json:"updateTime"`
+	Views          int          `json:"views"`
+	Words          int          `json:"words"`
+	ReadTime       int          `json:"readTime"`
+	Password       string       `json:"password"`
+	User           interface{}  `json:"user"`
+	CategoryId     int64        `json:"categoryId"`
+	Category       Categories   `json:"category"`
+	Tags           []entity.Tag `json:"tags"`
 }

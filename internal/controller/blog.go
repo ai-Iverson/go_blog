@@ -7,7 +7,6 @@ import (
 	v1 "go_blog/api/v1"
 	"go_blog/internal/model"
 	"go_blog/internal/service"
-	"go_blog/utility/utils"
 )
 
 var Blog = cBlog{}
@@ -44,10 +43,13 @@ func (c cBlog) CreateBlog(ctx context.Context, req *v1.CreateBlogReq) (res *v1.C
 // ShowBlogs 展示文章
 func (c cBlog) ShowBlogs(ctx context.Context, req *v1.ShowBlogsReq) (res *v1.ShowBlogsRes, err error) {
 	res = &v1.ShowBlogsRes{}
-	// 文章列表
-	blogList, err := service.Blog().BlogsList(ctx, req.PageNum, req.PageSize)
 
+	// 文章列表
+	blogList, err := service.Blog().BlogsList(ctx, req.Title, req.CategoryId, req.PageNum, req.PageSize)
 	err = gconv.Scan(blogList, &res.Blogs)
+	if err != nil {
+		return
+	}
 
 	// 分类列表
 	categoryList, err := service.Category().GetCategoryList(ctx)
@@ -77,8 +79,14 @@ func (c cBlog) BlogDetail(ctx context.Context, req *v1.BlogDetailReq) (res *v1.B
 	res = &v1.BlogDetailRes{}
 
 	out, err := service.Blog().BlogDetail(ctx, req.Id)
+	gconv.Scan(out, &res)
+	//utils.MyCopy(ctx, res, out)
 
-	utils.MyCopy(ctx, res, out)
+	return
+}
 
+//  修改文章置顶信息
+func (c *cBlog) UpdateBlogTop(ctx context.Context, req *v1.UpdateBlogTopReq) (res *v1.UpdateBlogTopRes, err error) {
+	err = service.Blog().UpdateBlogTop(ctx, req.Id, req.Top)
 	return
 }

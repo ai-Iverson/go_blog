@@ -11,8 +11,9 @@ import (
 
 type IBlog interface {
 	CreateBlog(ctx context.Context, in model.CreateBlogInput) (err error)
-	BlogsList(ctx context.Context, page, size int) (out *model.BlogsListOutput, err error)
+	BlogsList(ctx context.Context, title string, categroyId, page, size int) (out *model.BlogsListOutput, err error)
 	BlogDetail(ctx context.Context, id int) (out *model.BlogDetailOutput, err error)
+	UpdateBlogTop(ctx context.Context, blogId int, top bool) (err error)
 }
 
 var localBlog IBlog

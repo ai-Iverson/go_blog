@@ -64,6 +64,7 @@ var (
 					controller.Blog.CreateBlog,
 					controller.Blog.ShowBlogs,
 					controller.Blog.BlogDetail,
+					controller.Blog.UpdateBlogTop,
 				)
 			})
 			s.Run()
