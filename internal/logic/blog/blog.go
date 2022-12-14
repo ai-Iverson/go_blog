@@ -133,3 +133,27 @@ func (s *sBlog) UpdateBlogTop(ctx context.Context, blogId int, top bool) (err er
 	}
 	return
 }
+
+func (s *sBlog) UpdateBlogRecommend(ctx context.Context, blogId int, recommend bool) (err error) {
+	res, err := dao.Blog.Ctx(ctx).Data(dao.Blog.Columns().IsRecommend, recommend).Where(dao.Blog.Columns().Id, blogId).Update()
+	if res == nil {
+		glog.Error(ctx, "数据更新错误")
+	}
+	return
+}
+
+func (s *sBlog) UpdateBlogVisibility(ctx context.Context, in model.UpdateBlogVisibilityInput) (err error) {
+	blogCls := dao.Blog.Columns()
+	res, err := dao.Blog.Ctx(ctx).Data(g.Map{
+		blogCls.IsTop:            in.Top,
+		blogCls.IsRecommend:      in.Recommend,
+		blogCls.IsPublished:      in.Published,
+		blogCls.IsAppreciation:   in.Appreciation,
+		blogCls.Password:         in.Password,
+		blogCls.IsCommentEnabled: in.CommentEnabled,
+	}).Where(dao.Blog.Columns().Id, in.Id).Update()
+	if res == nil {
+		glog.Error(ctx, "数据更新错误")
+	}
+	return
+}

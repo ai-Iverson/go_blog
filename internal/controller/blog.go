@@ -74,7 +74,7 @@ func (c cBlog) ShowBlogs(ctx context.Context, req *v1.ShowBlogsReq) (res *v1.Sho
 	return
 }
 
-// 文章详情
+// BlogDetail 文章详情
 func (c cBlog) BlogDetail(ctx context.Context, req *v1.BlogDetailReq) (res *v1.BlogDetailRes, err error) {
 	res = &v1.BlogDetailRes{}
 
@@ -88,5 +88,28 @@ func (c cBlog) BlogDetail(ctx context.Context, req *v1.BlogDetailReq) (res *v1.B
 //  修改文章置顶信息
 func (c *cBlog) UpdateBlogTop(ctx context.Context, req *v1.UpdateBlogTopReq) (res *v1.UpdateBlogTopRes, err error) {
 	err = service.Blog().UpdateBlogTop(ctx, req.Id, req.Top)
+	return
+}
+
+// UpdateBlogRecommend 修改文章推荐信息
+func (c *cBlog) UpdateBlogRecommend(ctx context.Context, req *v1.UpdateBlogRecommendReq) (res *v1.UpdateBlogRecommendRes, err error) {
+	err = service.Blog().UpdateBlogRecommend(ctx, req.Id, req.Top)
+	return
+}
+
+// UpdateBlogVisibilityReq 修改文章可见性信息
+func (c *cBlog) UpdateBlogVisibilityReq(ctx context.Context, req *v1.UpdateBlogVisibilityReq) (res *v1.UpdateBlogVisibilityRes, err error) {
+	err = service.Blog().UpdateBlogVisibility(ctx, model.UpdateBlogVisibilityInput{
+		Id:             req.Id,
+		Appreciation:   req.Appreciation,
+		Recommend:      req.Recommend,
+		CommentEnabled: req.CommentEnabled,
+		Top:            req.Top,
+		Published:      req.Published,
+		Password:       req.Password,
+	})
+	if err != nil {
+		return
+	}
 	return
 }

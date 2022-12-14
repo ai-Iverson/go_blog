@@ -65,6 +65,8 @@ var (
 					controller.Blog.ShowBlogs,
 					controller.Blog.BlogDetail,
 					controller.Blog.UpdateBlogTop,
+					controller.Blog.UpdateBlogRecommend,
+					controller.Blog.UpdateBlogVisibilityReq,
 				)
 			})
 			s.Run()

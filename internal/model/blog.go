@@ -77,3 +77,13 @@ type BlogDetailOutput struct {
 	Category       Categories   `json:"category"`
 	Tags           []entity.Tag `json:"tags"`
 }
+
+type UpdateBlogVisibilityInput struct {
+	Id             int    `json:"id" in:"path" dc:"文章id"`
+	Appreciation   bool   `json:"appreciation"`
+	Recommend      bool   `json:"recommend"`
+	CommentEnabled bool   `json:"commentEnabled"`
+	Top            bool   `json:"top"`
+	Published      bool   `json:"published"`
+	Password       string `json:"password"`
+}
