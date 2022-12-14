@@ -58,9 +58,20 @@ func (s sBlog) CreateBlog(ctx context.Context, in model.CreateBlogInput) (err er
 	return
 }
 
-func (s *sBlog) BlogsList(ctx context.Context, page, size int) (out *model.BlogsListOutput, err error) {
+func (s *sBlog) BlogsList(ctx context.Context, title string, categroyId, page, size int) (out *model.BlogsListOutput, err error) {
 	out = &model.BlogsListOutput{}
 	b := dao.Blog.Ctx(ctx)
+
+	// 标题查询
+	if len(title) > 0 {
+		b = b.WhereLike(dao.Blog.Columns().Title, "%"+title+"%")
+	}
+
+	// 分类查询
+	if categroyId != 0 {
+		b = b.Where(dao.Blog.Columns().CategoryId, categroyId)
+	}
+
 	// 总数
 	count, err := b.Count()
 	if err != nil {
@@ -76,6 +87,10 @@ func (s *sBlog) BlogsList(ctx context.Context, page, size int) (out *model.Blogs
 	utils.MyCopy(ctx, &out, pagination)
 
 	err = gconv.Scan(result, &out.List)
+	if err != nil {
+		return
+	}
+
 	// 查询每个blog的categroy信息
 	err = dao.Category.Ctx(ctx).
 		Where(dao.Category.Columns().Id, gdb.ListItemValuesUnique(out.List, "CategoryId")).
@@ -91,10 +106,10 @@ func (s *sBlog) BlogDetail(ctx context.Context, id int) (out *model.BlogDetailOu
 		return
 	}
 
-	//err = dao.Category.Ctx(ctx).Where(dao.Category.Columns().Id, out.CategoryId)
-	//if err != nil {
-	//	return
-	//}
+	err = dao.Category.Ctx(ctx).Where(dao.Category.Columns().Id, out.CategoryId).Scan(&out.Category)
+	if err != nil {
+		return
+	}
 
 	tagList := []*entity.BlogTag{}
 	err = dao.BlogTag.Ctx(ctx).Where(dao.BlogTag.Columns().BlogId, id).Scan(&tagList)
@@ -106,8 +121,15 @@ func (s *sBlog) BlogDetail(ctx context.Context, id int) (out *model.BlogDetailOu
 	if err != nil {
 		return
 	}
-	glog.Info(ctx, "232233232", out)
 
 	return
 
+}
+
+func (s *sBlog) UpdateBlogTop(ctx context.Context, blogId int, top bool) (err error) {
+	res, err := dao.Blog.Ctx(ctx).Data(dao.Blog.Columns().IsTop, top).Where(dao.Blog.Columns().Id, blogId).Update()
+	if res == nil {
+		glog.Error(ctx, "数据更新错误")
+	}
+	return
 }

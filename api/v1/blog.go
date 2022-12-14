@@ -1,6 +1,8 @@
 package v1
 
-import "github.com/gogf/gf/v2/frame/g"
+import (
+	"github.com/gogf/gf/v2/frame/g"
+)
 
 type BlogBase struct {
 	ID             int           `json:"id"`
@@ -52,9 +54,11 @@ type CreateBlogRes struct {
 }
 
 type ShowBlogsReq struct {
-	g.Meta   `path:"/admin/blogs" method:"get" summart:"展示文章列表" tags:"展示文章列表"`
-	PageNum  int `json:"pageNum"`
-	PageSize int `json:"pageSize"`
+	g.Meta     `path:"/admin/blogs" method:"get" summart:"展示文章列表" tags:"展示文章列表"`
+	Title      string `json:"title"`
+	CategoryId int    `json:"categoryId"`
+	PageNum    int    `json:"pageNum"`
+	PageSize   int    `json:"pageSize"`
 }
 
 type ShowBlogsRes struct {
@@ -87,4 +91,13 @@ type BlogDetailRes struct {
 	User           interface{} `json:"user"`
 	Category       Categories  `json:"category"`
 	Tags           []Tags      `json:"tags"`
+}
+
+type UpdateBlogTopReq struct {
+	g.Meta `path:"/admin/blog/top" method:"put" summart:"修改文章置顶信息" tags:"修改文章置顶信息"`
+	Id     int  `json:"id"`
+	Top    bool `json:"top"`
+}
+
+type UpdateBlogTopRes struct {
 }
