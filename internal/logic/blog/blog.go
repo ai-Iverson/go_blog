@@ -7,6 +7,7 @@ import (
 	"github.com/gogf/gf/v2/os/glog"
 	"github.com/gogf/gf/v2/os/gtime"
 	"github.com/gogf/gf/v2/util/gconv"
+	v1 "go_blog/api/v1"
 	"go_blog/internal/dao"
 	"go_blog/internal/model"
 	"go_blog/internal/model/entity"
@@ -46,11 +47,57 @@ func (s sBlog) CreateBlog(ctx context.Context, in model.CreateBlogInput) (err er
 			Password:         in.Password,
 			UserId:           gconv.Int64(in.User),
 		})
+		if err != nil {
+			return err
+		}
 		for _, tag := range in.TagList {
 			_, err = dao.BlogTag.Ctx(ctx).Data(entity.BlogTag{
 				BlogId: blogId,
 				TagId:  gconv.Int64(tag),
 			}).Insert()
+		}
+
+		return err
+	})
+	return
+}
+
+func (s sBlog) UpdateBlog(ctx context.Context, in v1.UpdateBlogReq) (err error) {
+	g.DB().Transaction(context.TODO(), func(ctx context.Context, tx *gdb.TX) error {
+		blogCls := dao.Blog.Columns()
+		_, err := tx.Ctx(ctx).Update(dao.Blog.Table(), g.Map{
+			blogCls.Title:            in.Title,
+			blogCls.FirstPicture:     in.FirstPicture,
+			blogCls.Content:          in.Content,
+			blogCls.Description:      in.Description,
+			blogCls.IsPublished:      gconv.Int(in.Published),
+			blogCls.IsRecommend:      gconv.Int(in.Recommend),
+			blogCls.IsAppreciation:   gconv.Int(in.Appreciation),
+			blogCls.IsCommentEnabled: gconv.Int(in.CommentEnabled),
+			blogCls.Views:            in.Views,
+			blogCls.Words:            gconv.Int(in.Words),
+			blogCls.ReadTime:         in.ReadTime,
+			blogCls.CategoryId:       gconv.Int64(in.Cate),
+			blogCls.IsTop:            gconv.Int(in.Top),
+			blogCls.Password:         in.Password,
+			blogCls.UpdateTime:       gtime.Now(),
+		}, dao.Blog.Columns().Id, in.Id)
+		if err != nil {
+			return err
+		}
+
+		//删除关联标签
+		_, err = dao.BlogTag.Ctx(ctx).Where(dao.BlogTag.Columns().BlogId, in.Id).Delete()
+		glog.Info(ctx, "gconv.Int64(in.Id", gconv.Int64(in.Id))
+		// 关联标签
+		for _, tag := range in.TagList {
+			_, err = dao.BlogTag.Ctx(ctx).Data(entity.BlogTag{
+				BlogId: gconv.Int64(in.Id),
+				TagId:  gconv.Int64(tag),
+			}).Insert()
+			if err != nil {
+				return err
+			}
 		}
 
 		return err

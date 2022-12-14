@@ -63,6 +63,7 @@ var (
 					controller.Category.DeleteCategory,
 					controller.Blog.CreateBlog,
 					controller.Blog.ShowBlogs,
+					controller.Blog.UpdateBlog,
 					controller.Blog.BlogDetail,
 					controller.Blog.UpdateBlogTop,
 					controller.Blog.UpdateBlogRecommend,

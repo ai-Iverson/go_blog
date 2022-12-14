@@ -40,6 +40,11 @@ func (c cBlog) CreateBlog(ctx context.Context, req *v1.CreateBlogReq) (res *v1.C
 	return
 }
 
+func (c cBlog) UpdateBlog(ctx context.Context, req *v1.UpdateBlogReq) (res *v1.UpdateBlogRes, err error) {
+	err = service.Blog().UpdateBlog(ctx, *req)
+	return
+}
+
 // ShowBlogs 展示文章
 func (c cBlog) ShowBlogs(ctx context.Context, req *v1.ShowBlogsReq) (res *v1.ShowBlogsRes, err error) {
 	res = &v1.ShowBlogsRes{}
