@@ -1,0 +1,1114 @@
+2022-12-14 10:19:00.452 [32m[INFO][0m swagger ui is serving at address: http://127.0.0.1:8090/swagger/
+2022-12-14 10:19:00.452 [32m[INFO][0m pid[29764]: http server started listening on [:8090]
+2022-12-14 10:19:00.454 [32m[INFO][0m openapi specification is serving at address: http://127.0.0.1:8090/api.json
+
+  ADDRESS | METHOD |         ROUTE         |                             HANDLER                             |          MIDDLEWARE            
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.MiddlewareCORS             | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.Ctx                        | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.I18NMiddleware             | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.ResponseHandler            | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/blog           | go_blog/internal/controller.cBlog.BlogDetail                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/blog           | go_blog/internal/controller.cBlog.CreateBlog                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/blogs          | go_blog/internal/controller.cBlog.ShowBlogs                     | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/categories     | go_blog/internal/controller.(*cCategory).ShowCategory           | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | DELETE | /admin/category       | go_blog/internal/controller.(*cCategory).DeleteCategory         | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/category       | go_blog/internal/controller.(*cCategory).AddCategory            | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | PUT    | /admin/category       | go_blog/internal/controller.(*cCategory).UpdateCategory         | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/categoryAndTag | go_blog/internal/controller.(*cIndex).CategoryAndTag            |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/dashboard      | go_blog/internal/controller.(*cDashboart).Dashboart             | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/login          | go_blog/internal/controller.cUser.Login                         |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | DELETE | /admin/tag            | go_blog/internal/controller.(*cTags).DeleteTags                 | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/tag            | go_blog/internal/controller.(*cTags).AddTags                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | PUT    | /admin/tag            | go_blog/internal/controller.(*cTags).UpdateTags                 | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/tags           | go_blog/internal/controller.(*cTags).ShowTags                   | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /api.json             | github.com/gogf/gf/v2/net/ghttp.(*Server).openapiSpec           |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /hello                | go_blog/internal/controller.(*cHello).Hello                     |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /swagger/*            | github.com/gogf/gf/v2/net/ghttp.(*Server).swaggerUI             | HOOK_BEFORE_SERVE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+
+2022-12-14 10:19:04.240 [33m[DEBU][0m {38f9166768873017f4c101277db78a5f} [  6 ms] [default] [go_blog] [rows:18 ] SHOW FULL COLUMNS FROM `blog`
+2022-12-14 10:19:04.243 [33m[DEBU][0m {38f9166768873017f4c101277db78a5f} [  0 ms] [default] [go_blog] [rows:1  ] SELECT COUNT(1) FROM `blog`
+2022-12-14 10:19:04.248 [33m[DEBU][0m {38f9166768873017f4c101277db78a5f} [  1 ms] [default] [go_blog] [rows:3  ] SELECT * FROM `blog` LIMIT 0,10
+2022-12-14 10:19:04.252 [33m[DEBU][0m {38f9166768873017f4c101277db78a5f} [  0 ms] [default] [go_blog] [rows:2  ] SHOW FULL COLUMNS FROM `category`
+2022-12-14 10:19:04.258 [33m[DEBU][0m {38f9166768873017f4c101277db78a5f} [  2 ms] [default] [go_blog] [rows:1  ] SELECT `id`,`category_name` FROM `category` WHERE `id` IN(1)
+2022-12-14 10:19:04.263 [32m[INFO][0m {38f9166768873017f4c101277db78a5f} blog.go:51: {"blogs":{"list":[{"id":6,"title":"sdfas","firstPicture":"sdf","content":"asdf","description":"asdf","published":true,"recommend":false,"appreciation":false,"commentEnabled":false,"top":false,"createTime":"2022-12-13 08:39:11","updateTime":"2022-12-13 08:39:11","views":0,"words":23,"readTime":0,"password":"","user":1,"category":{"id":1,"name":"sdf","blogs":null},"tags":null},{"id":7,"title":"sdaf","firstPicture":"sadf","content":"asdf","description":"sadf","published":true,"recommend":false,"appreciation":false,"commentEnabled":false,"top":false,"createTime":"2022-12-13 11:09:48","updateTime":"2022-12-13 11:09:48","views":0,"words":23,"readTime":0,"password":"","user":1,"category":{"id":0,"name":"","blogs":null},"tags":null},{"id":8,"title":"fdg","firstPicture":"sdfg","content":"dsfg","description":"dsfg","published":true,"recommend":false,"appreciation":false,"commentEnabled":false,"top":false,"createTime":"2022-12-13 11:33:38","updateTime":"2022-12-13 11:33:38","views":0,"words":34,"readTime":0,"password":"","user":1,"category":{"id":0,"name":"","blogs":null},"tags":null}],"total":3,"pageNum":1,"pageSize":10,"size":3,"startRow":1,"endRow":3,"pages":1,"prePage":0,"nextPage":0,"isFirstPage":true,"isLastPage":true,"hasPreviousPage":false,"hasNextPage":false,"navigatePages":8,"navigatepageNums":[1],"navigateFirstPage":1,"navigateLastPage":1},"categories":null}
+2022-12-14 10:19:04.297 [33m[DEBU][0m {38f9166768873017f4c101277db78a5f} [  1 ms] [default] [go_blog] [rows:1  ] SELECT `id`,`category_name` FROM `category`
+2022-12-14 10:19:04.302 [32m[INFO][0m {38f9166768873017f4c101277db78a5f} blog.go:55: [{"id":1,"categoryName":"sdf"}]
+2022-12-14 10:23:51.153 [32m[INFO][0m swagger ui is serving at address: http://127.0.0.1:8090/swagger/
+2022-12-14 10:23:51.153 [32m[INFO][0m pid[17172]: http server started listening on [:8090]
+2022-12-14 10:23:51.155 [32m[INFO][0m openapi specification is serving at address: http://127.0.0.1:8090/api.json
+
+  ADDRESS | METHOD |         ROUTE         |                             HANDLER                             |          MIDDLEWARE            
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.MiddlewareCORS             | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.Ctx                        | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.I18NMiddleware             | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.ResponseHandler            | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/blog           | go_blog/internal/controller.cBlog.BlogDetail                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/blog           | go_blog/internal/controller.cBlog.CreateBlog                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/blogs          | go_blog/internal/controller.cBlog.ShowBlogs                     | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/categories     | go_blog/internal/controller.(*cCategory).ShowCategory           | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | DELETE | /admin/category       | go_blog/internal/controller.(*cCategory).DeleteCategory         | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/category       | go_blog/internal/controller.(*cCategory).AddCategory            | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | PUT    | /admin/category       | go_blog/internal/controller.(*cCategory).UpdateCategory         | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/categoryAndTag | go_blog/internal/controller.(*cIndex).CategoryAndTag            |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/dashboard      | go_blog/internal/controller.(*cDashboart).Dashboart             | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/login          | go_blog/internal/controller.cUser.Login                         |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | DELETE | /admin/tag            | go_blog/internal/controller.(*cTags).DeleteTags                 | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/tag            | go_blog/internal/controller.(*cTags).AddTags                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | PUT    | /admin/tag            | go_blog/internal/controller.(*cTags).UpdateTags                 | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/tags           | go_blog/internal/controller.(*cTags).ShowTags                   | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /api.json             | github.com/gogf/gf/v2/net/ghttp.(*Server).openapiSpec           |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /hello                | go_blog/internal/controller.(*cHello).Hello                     |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /swagger/*            | github.com/gogf/gf/v2/net/ghttp.(*Server).swaggerUI             | HOOK_BEFORE_SERVE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+
+2022-12-14 10:27:43.151 [32m[INFO][0m swagger ui is serving at address: http://127.0.0.1:8090/swagger/
+2022-12-14 10:27:43.151 [32m[INFO][0m pid[28080]: http server started listening on [:8090]
+2022-12-14 10:27:43.154 [32m[INFO][0m openapi specification is serving at address: http://127.0.0.1:8090/api.json
+
+  ADDRESS | METHOD |         ROUTE         |                             HANDLER                             |          MIDDLEWARE            
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.MiddlewareCORS             | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.Ctx                        | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.I18NMiddleware             | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.ResponseHandler            | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/blog           | go_blog/internal/controller.cBlog.BlogDetail                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/blog           | go_blog/internal/controller.cBlog.CreateBlog                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/blogs          | go_blog/internal/controller.cBlog.ShowBlogs                     | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/categories     | go_blog/internal/controller.(*cCategory).ShowCategory           | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | DELETE | /admin/category       | go_blog/internal/controller.(*cCategory).DeleteCategory         | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/category       | go_blog/internal/controller.(*cCategory).AddCategory            | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | PUT    | /admin/category       | go_blog/internal/controller.(*cCategory).UpdateCategory         | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/categoryAndTag | go_blog/internal/controller.(*cIndex).CategoryAndTag            |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/dashboard      | go_blog/internal/controller.(*cDashboart).Dashboart             | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/login          | go_blog/internal/controller.cUser.Login                         |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | DELETE | /admin/tag            | go_blog/internal/controller.(*cTags).DeleteTags                 | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/tag            | go_blog/internal/controller.(*cTags).AddTags                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | PUT    | /admin/tag            | go_blog/internal/controller.(*cTags).UpdateTags                 | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/tags           | go_blog/internal/controller.(*cTags).ShowTags                   | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /api.json             | github.com/gogf/gf/v2/net/ghttp.(*Server).openapiSpec           |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /hello                | go_blog/internal/controller.(*cHello).Hello                     |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /swagger/*            | github.com/gogf/gf/v2/net/ghttp.(*Server).swaggerUI             | HOOK_BEFORE_SERVE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+
+2022-12-14 10:28:00.643 [33m[DEBU][0m {5457454be587301741921214274a88b5} [  5 ms] [default] [go_blog] [rows:18 ] SHOW FULL COLUMNS FROM `blog`
+2022-12-14 10:28:00.649 [33m[DEBU][0m {5457454be587301741921214274a88b5} [  2 ms] [default] [go_blog] [rows:1  ] SELECT COUNT(1) FROM `blog`
+2022-12-14 10:28:00.654 [33m[DEBU][0m {5457454be587301741921214274a88b5} [  2 ms] [default] [go_blog] [rows:3  ] SELECT * FROM `blog` LIMIT 0,10
+2022-12-14 10:28:00.658 [33m[DEBU][0m {5457454be587301741921214274a88b5} [  1 ms] [default] [go_blog] [rows:2  ] SHOW FULL COLUMNS FROM `category`
+2022-12-14 10:28:00.665 [33m[DEBU][0m {5457454be587301741921214274a88b5} [  3 ms] [default] [go_blog] [rows:1  ] SELECT `id`,`category_name` FROM `category` WHERE `id` IN(1)
+2022-12-14 10:28:00.669 [32m[INFO][0m {5457454be587301741921214274a88b5} blog.go:83: xxx {"list":[{"id":6,"title":"sdfas","firstPicture":"sdf","content":"asdf","description":"asdf","published":true,"recommend":false,"appreciation":false,"commentEnabled":false,"top":false,"createTime":"2022-12-13 08:39:11","updateTime":"2022-12-13 08:39:11","views":0,"words":23,"readTime":0,"password":"","user":1,"categoryId":1,"category":{"id":1,"name":"sdf","blogs":null},"tags":null},{"id":7,"title":"sdaf","firstPicture":"sadf","content":"asdf","description":"sadf","published":true,"recommend":false,"appreciation":false,"commentEnabled":false,"top":false,"createTime":"2022-12-13 11:09:48","updateTime":"2022-12-13 11:09:48","views":0,"words":23,"readTime":0,"password":"","user":1,"categoryId":1,"category":{"id":0,"name":"","blogs":null},"tags":null},{"id":8,"title":"fdg","firstPicture":"sdfg","content":"dsfg","description":"dsfg","published":true,"recommend":false,"appreciation":false,"commentEnabled":false,"top":false,"createTime":"2022-12-13 11:33:38","updateTime":"2022-12-13 11:33:38","views":0,"words":34,"readTime":0,"password":"","user":1,"categoryId":1,"category":{"id":0,"name":"","blogs":null},"tags":null}],"total":3,"pageNum":1,"pageSize":10,"size":3,"startRow":1,"endRow":3,"pages":1,"prePage":0,"nextPage":0,"isFirstPage":true,"isLastPage":true,"hasPreviousPage":false,"hasNextPage":false,"navigatePages":8,"navigatepageNums":[1],"navigateFirstPage":1,"navigateLastPage":1}
+2022-12-14 10:28:00.699 [32m[INFO][0m {5457454be587301741921214274a88b5} blog.go:51: {"blogs":{"list":[{"id":6,"title":"sdfas","firstPicture":"sdf","content":"asdf","description":"asdf","published":true,"recommend":false,"appreciation":false,"commentEnabled":false,"top":false,"createTime":"2022-12-13 08:39:11","updateTime":"2022-12-13 08:39:11","views":0,"words":23,"readTime":0,"password":"","user":1,"category":{"id":1,"name":"sdf","blogs":null},"tags":null},{"id":7,"title":"sdaf","firstPicture":"sadf","content":"asdf","description":"sadf","published":true,"recommend":false,"appreciation":false,"commentEnabled":false,"top":false,"createTime":"2022-12-13 11:09:48","updateTime":"2022-12-13 11:09:48","views":0,"words":23,"readTime":0,"password":"","user":1,"category":{"id":0,"name":"","blogs":null},"tags":null},{"id":8,"title":"fdg","firstPicture":"sdfg","content":"dsfg","description":"dsfg","published":true,"recommend":false,"appreciation":false,"commentEnabled":false,"top":false,"createTime":"2022-12-13 11:33:38","updateTime":"2022-12-13 11:33:38","views":0,"words":34,"readTime":0,"password":"","user":1,"category":{"id":0,"name":"","blogs":null},"tags":null}],"total":3,"pageNum":1,"pageSize":10,"size":3,"startRow":1,"endRow":3,"pages":1,"prePage":0,"nextPage":0,"isFirstPage":true,"isLastPage":true,"hasPreviousPage":false,"hasNextPage":false,"navigatePages":8,"navigatepageNums":[1],"navigateFirstPage":1,"navigateLastPage":1},"categories":null}
+2022-12-14 10:28:00.732 [33m[DEBU][0m {5457454be587301741921214274a88b5} [  1 ms] [default] [go_blog] [rows:1  ] SELECT `id`,`category_name` FROM `category`
+2022-12-14 10:28:00.736 [32m[INFO][0m {5457454be587301741921214274a88b5} blog.go:55: [{"id":1,"categoryName":"sdf"}]
+2022-12-14 10:31:47.954 [32m[INFO][0m pid[22496]: http server started listening on [:8090]
+2022-12-14 10:31:47.954 [32m[INFO][0m swagger ui is serving at address: http://127.0.0.1:8090/swagger/
+2022-12-14 10:31:47.955 [32m[INFO][0m openapi specification is serving at address: http://127.0.0.1:8090/api.json
+
+  ADDRESS | METHOD |         ROUTE         |                             HANDLER                             |          MIDDLEWARE            
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.MiddlewareCORS             | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.Ctx                        | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.I18NMiddleware             | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.ResponseHandler            | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/blog           | go_blog/internal/controller.cBlog.BlogDetail                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/blog           | go_blog/internal/controller.cBlog.CreateBlog                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/blogs          | go_blog/internal/controller.cBlog.ShowBlogs                     | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/categories     | go_blog/internal/controller.(*cCategory).ShowCategory           | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | DELETE | /admin/category       | go_blog/internal/controller.(*cCategory).DeleteCategory         | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/category       | go_blog/internal/controller.(*cCategory).AddCategory            | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | PUT    | /admin/category       | go_blog/internal/controller.(*cCategory).UpdateCategory         | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/categoryAndTag | go_blog/internal/controller.(*cIndex).CategoryAndTag            |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/dashboard      | go_blog/internal/controller.(*cDashboart).Dashboart             | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/login          | go_blog/internal/controller.cUser.Login                         |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | DELETE | /admin/tag            | go_blog/internal/controller.(*cTags).DeleteTags                 | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/tag            | go_blog/internal/controller.(*cTags).AddTags                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | PUT    | /admin/tag            | go_blog/internal/controller.(*cTags).UpdateTags                 | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/tags           | go_blog/internal/controller.(*cTags).ShowTags                   | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /api.json             | github.com/gogf/gf/v2/net/ghttp.(*Server).openapiSpec           |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /hello                | go_blog/internal/controller.(*cHello).Hello                     |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /swagger/*            | github.com/gogf/gf/v2/net/ghttp.(*Server).swaggerUI             | HOOK_BEFORE_SERVE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+
+2022-12-14 10:31:58.822 [33m[DEBU][0m {8cada6bf1c8830177bb16e59163f173a} [  7 ms] [default] [go_blog] [rows:18 ] SHOW FULL COLUMNS FROM `blog`
+2022-12-14 10:31:58.823 [33m[DEBU][0m {8cada6bf1c8830177bb16e59163f173a} [  1 ms] [default] [go_blog] [rows:1  ] SELECT COUNT(1) FROM `blog`
+2022-12-14 10:31:58.826 [33m[DEBU][0m {8cada6bf1c8830177bb16e59163f173a} [  2 ms] [default] [go_blog] [rows:3  ] SELECT * FROM `blog` LIMIT 0,10
+2022-12-14 10:34:57.797 [33m[DEBU][0m {8cada6bf1c8830177bb16e59163f173a} [  4 ms] [default] [go_blog] [rows:2  ] SHOW FULL COLUMNS FROM `category`
+2022-12-14 10:34:57.799 [33m[DEBU][0m {8cada6bf1c8830177bb16e59163f173a} [  2 ms] [default] [go_blog] [rows:1  ] SELECT `id`,`category_name` FROM `category` WHERE `id` IN(1)
+2022-12-14 10:35:09.646 [32m[INFO][0m {8cada6bf1c8830177bb16e59163f173a} blog.go:83: xxx {"list":[{"id":6,"title":"sdfas","firstPicture":"sdf","content":"asdf","description":"asdf","published":true,"recommend":false,"appreciation":false,"commentEnabled":false,"top":false,"createTime":"2022-12-13 08:39:11","updateTime":"2022-12-13 08:39:11","views":0,"words":23,"readTime":0,"password":"","user":1,"categoryId":1,"category":{"id":1,"name":"sdf","blogs":null},"tags":null},{"id":7,"title":"sdaf","firstPicture":"sadf","content":"asdf","description":"sadf","published":true,"recommend":false,"appreciation":false,"commentEnabled":false,"top":false,"createTime":"2022-12-13 11:09:48","updateTime":"2022-12-13 11:09:48","views":0,"words":23,"readTime":0,"password":"","user":1,"categoryId":1,"category":{"id":0,"name":"","blogs":null},"tags":null},{"id":8,"title":"fdg","firstPicture":"sdfg","content":"dsfg","description":"dsfg","published":true,"recommend":false,"appreciation":false,"commentEnabled":false,"top":false,"createTime":"2022-12-13 11:33:38","updateTime":"2022-12-13 11:33:38","views":0,"words":34,"readTime":0,"password":"","user":1,"categoryId":1,"category":{"id":0,"name":"","blogs":null},"tags":null}],"total":3,"pageNum":1,"pageSize":10,"size":3,"startRow":1,"endRow":3,"pages":1,"prePage":0,"nextPage":0,"isFirstPage":true,"isLastPage":true,"hasPreviousPage":false,"hasNextPage":false,"navigatePages":8,"navigatepageNums":[1],"navigateFirstPage":1,"navigateLastPage":1}
+2022-12-14 11:41:46.259 [32m[INFO][0m pid[15816]: http server started listening on [:8090]
+2022-12-14 11:41:46.259 [32m[INFO][0m swagger ui is serving at address: http://127.0.0.1:8090/swagger/
+2022-12-14 11:41:46.263 [32m[INFO][0m openapi specification is serving at address: http://127.0.0.1:8090/api.json
+
+  ADDRESS | METHOD |         ROUTE         |                             HANDLER                             |          MIDDLEWARE            
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.MiddlewareCORS             | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.Ctx                        | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.I18NMiddleware             | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.ResponseHandler            | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/blog           | go_blog/internal/controller.cBlog.BlogDetail                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/blog           | go_blog/internal/controller.cBlog.CreateBlog                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/blogs          | go_blog/internal/controller.cBlog.ShowBlogs                     | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/categories     | go_blog/internal/controller.(*cCategory).ShowCategory           | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | DELETE | /admin/category       | go_blog/internal/controller.(*cCategory).DeleteCategory         | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/category       | go_blog/internal/controller.(*cCategory).AddCategory            | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | PUT    | /admin/category       | go_blog/internal/controller.(*cCategory).UpdateCategory         | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/categoryAndTag | go_blog/internal/controller.(*cIndex).CategoryAndTag            |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/dashboard      | go_blog/internal/controller.(*cDashboart).Dashboart             | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/login          | go_blog/internal/controller.cUser.Login                         |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | DELETE | /admin/tag            | go_blog/internal/controller.(*cTags).DeleteTags                 | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/tag            | go_blog/internal/controller.(*cTags).AddTags                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | PUT    | /admin/tag            | go_blog/internal/controller.(*cTags).UpdateTags                 | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/tags           | go_blog/internal/controller.(*cTags).ShowTags                   | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /api.json             | github.com/gogf/gf/v2/net/ghttp.(*Server).openapiSpec           |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /hello                | go_blog/internal/controller.(*cHello).Hello                     |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /swagger/*            | github.com/gogf/gf/v2/net/ghttp.(*Server).swaggerUI             | HOOK_BEFORE_SERVE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+
+2022-12-14 11:41:52.128 [33m[DEBU][0m {88c7a913ed8b301726c49b054eadb3eb} [  5 ms] [default] [go_blog] [rows:18 ] SHOW FULL COLUMNS FROM `blog`
+2022-12-14 11:41:52.135 [33m[DEBU][0m {88c7a913ed8b301726c49b054eadb3eb} [  3 ms] [default] [go_blog] [rows:1  ] SELECT COUNT(1) FROM `blog`
+2022-12-14 11:41:52.140 [33m[DEBU][0m {88c7a913ed8b301726c49b054eadb3eb} [  1 ms] [default] [go_blog] [rows:3  ] SELECT * FROM `blog` LIMIT 0,10
+2022-12-14 11:41:52.147 [33m[DEBU][0m {88c7a913ed8b301726c49b054eadb3eb} [  2 ms] [default] [go_blog] [rows:2  ] SHOW FULL COLUMNS FROM `category`
+2022-12-14 11:41:52.151 [33m[DEBU][0m {88c7a913ed8b301726c49b054eadb3eb} [  1 ms] [default] [go_blog] [rows:0  ] SELECT `id`,`category_name` FROM `category` WHERE 0=1
+2022-12-14 11:41:52.156 [32m[INFO][0m {88c7a913ed8b301726c49b054eadb3eb} blog.go:83: xxx {"list":[{"id":6,"title":"sdfas","firstPicture":"sdf","content":"asdf","description":"asdf","published":true,"recommend":false,"appreciation":false,"commentEnabled":false,"top":false,"createTime":"2022-12-13 08:39:11","updateTime":"2022-12-13 08:39:11","views":0,"words":23,"readTime":0,"password":"","user":1,"categoryId":1,"category":{"id":0,"name":"","blogs":null},"tags":null},{"id":7,"title":"sdaf","firstPicture":"sadf","content":"asdf","description":"sadf","published":true,"recommend":false,"appreciation":false,"commentEnabled":false,"top":false,"createTime":"2022-12-13 11:09:48","updateTime":"2022-12-13 11:09:48","views":0,"words":23,"readTime":0,"password":"","user":1,"categoryId":1,"category":{"id":0,"name":"","blogs":null},"tags":null},{"id":8,"title":"fdg","firstPicture":"sdfg","content":"dsfg","description":"dsfg","published":true,"recommend":false,"appreciation":false,"commentEnabled":false,"top":false,"createTime":"2022-12-13 11:33:38","updateTime":"2022-12-13 11:33:38","views":0,"words":34,"readTime":0,"password":"","user":1,"categoryId":1,"category":{"id":0,"name":"","blogs":null},"tags":null}],"total":3,"pageNum":1,"pageSize":10,"size":3,"startRow":1,"endRow":3,"pages":1,"prePage":0,"nextPage":0,"isFirstPage":true,"isLastPage":true,"hasPreviousPage":false,"hasNextPage":false,"navigatePages":8,"navigatepageNums":[1],"navigateFirstPage":1,"navigateLastPage":1}
+2022-12-14 11:41:52.194 [32m[INFO][0m {88c7a913ed8b301726c49b054eadb3eb} blog.go:51: {"blogs":{"list":[{"id":6,"title":"sdfas","firstPicture":"sdf","content":"asdf","description":"asdf","published":true,"recommend":false,"appreciation":false,"commentEnabled":false,"top":false,"createTime":"2022-12-13 08:39:11","updateTime":"2022-12-13 08:39:11","views":0,"words":23,"readTime":0,"password":"","user":1,"category":{"id":0,"name":"","blogs":null},"tags":null},{"id":7,"title":"sdaf","firstPicture":"sadf","content":"asdf","description":"sadf","published":true,"recommend":false,"appreciation":false,"commentEnabled":false,"top":false,"createTime":"2022-12-13 11:09:48","updateTime":"2022-12-13 11:09:48","views":0,"words":23,"readTime":0,"password":"","user":1,"category":{"id":0,"name":"","blogs":null},"tags":null},{"id":8,"title":"fdg","firstPicture":"sdfg","content":"dsfg","description":"dsfg","published":true,"recommend":false,"appreciation":false,"commentEnabled":false,"top":false,"createTime":"2022-12-13 11:33:38","updateTime":"2022-12-13 11:33:38","views":0,"words":34,"readTime":0,"password":"","user":1,"category":{"id":0,"name":"","blogs":null},"tags":null}],"total":3,"pageNum":1,"pageSize":10,"size":3,"startRow":1,"endRow":3,"pages":1,"prePage":0,"nextPage":0,"isFirstPage":true,"isLastPage":true,"hasPreviousPage":false,"hasNextPage":false,"navigatePages":8,"navigatepageNums":[1],"navigateFirstPage":1,"navigateLastPage":1},"categories":null}
+2022-12-14 11:41:52.254 [33m[DEBU][0m {88c7a913ed8b301726c49b054eadb3eb} [  3 ms] [default] [go_blog] [rows:1  ] SELECT `id`,`category_name` FROM `category`
+2022-12-14 11:41:52.262 [32m[INFO][0m {88c7a913ed8b301726c49b054eadb3eb} blog.go:55: [{"id":1,"categoryName":"sdf"}]
+2022-12-14 11:43:38.017 [32m[INFO][0m pid[33480]: http server started listening on [:8090]
+2022-12-14 11:43:38.017 [32m[INFO][0m swagger ui is serving at address: http://127.0.0.1:8090/swagger/
+2022-12-14 11:43:38.022 [32m[INFO][0m openapi specification is serving at address: http://127.0.0.1:8090/api.json
+
+  ADDRESS | METHOD |         ROUTE         |                             HANDLER                             |          MIDDLEWARE            
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.MiddlewareCORS             | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.Ctx                        | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.I18NMiddleware             | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.ResponseHandler            | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/blog           | go_blog/internal/controller.cBlog.BlogDetail                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/blog           | go_blog/internal/controller.cBlog.CreateBlog                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/blogs          | go_blog/internal/controller.cBlog.ShowBlogs                     | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/categories     | go_blog/internal/controller.(*cCategory).ShowCategory           | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | DELETE | /admin/category       | go_blog/internal/controller.(*cCategory).DeleteCategory         | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/category       | go_blog/internal/controller.(*cCategory).AddCategory            | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | PUT    | /admin/category       | go_blog/internal/controller.(*cCategory).UpdateCategory         | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/categoryAndTag | go_blog/internal/controller.(*cIndex).CategoryAndTag            |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/dashboard      | go_blog/internal/controller.(*cDashboart).Dashboart             | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/login          | go_blog/internal/controller.cUser.Login                         |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | DELETE | /admin/tag            | go_blog/internal/controller.(*cTags).DeleteTags                 | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/tag            | go_blog/internal/controller.(*cTags).AddTags                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | PUT    | /admin/tag            | go_blog/internal/controller.(*cTags).UpdateTags                 | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/tags           | go_blog/internal/controller.(*cTags).ShowTags                   | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /api.json             | github.com/gogf/gf/v2/net/ghttp.(*Server).openapiSpec           |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /hello                | go_blog/internal/controller.(*cHello).Hello                     |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /swagger/*            | github.com/gogf/gf/v2/net/ghttp.(*Server).swaggerUI             | HOOK_BEFORE_SERVE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+
+2022-12-14 11:44:41.796 [33m[DEBU][0m {e01c4495148c30177f22e836e0c6bef3} [  6 ms] [default] [go_blog] [rows:18 ] SHOW FULL COLUMNS FROM `blog`
+2022-12-14 11:44:41.800 [33m[DEBU][0m {e01c4495148c30177f22e836e0c6bef3} [  0 ms] [default] [go_blog] [rows:1  ] SELECT COUNT(1) FROM `blog`
+2022-12-14 11:44:41.804 [33m[DEBU][0m {e01c4495148c30177f22e836e0c6bef3} [  0 ms] [default] [go_blog] [rows:3  ] SELECT * FROM `blog` LIMIT 0,10
+2022-12-14 11:44:41.809 [32m[INFO][0m {e01c4495148c30177f22e836e0c6bef3} blog.go:83: xxx {"list":[{"id":6,"title":"sdfas","firstPicture":"sdf","content":"asdf","description":"asdf","published":true,"recommend":false,"appreciation":false,"commentEnabled":false,"top":false,"createTime":"2022-12-13 08:39:11","updateTime":"2022-12-13 08:39:11","views":0,"words":23,"readTime":0,"password":"","user":1,"categoryId":1,"category":{"id":0,"name":"","blogs":null},"tags":null},{"id":7,"title":"sdaf","firstPicture":"sadf","content":"asdf","description":"sadf","published":true,"recommend":false,"appreciation":false,"commentEnabled":false,"top":false,"createTime":"2022-12-13 11:09:48","updateTime":"2022-12-13 11:09:48","views":0,"words":23,"readTime":0,"password":"","user":1,"categoryId":1,"category":{"id":0,"name":"","blogs":null},"tags":null},{"id":8,"title":"fdg","firstPicture":"sdfg","content":"dsfg","description":"dsfg","published":true,"recommend":false,"appreciation":false,"commentEnabled":false,"top":false,"createTime":"2022-12-13 11:33:38","updateTime":"2022-12-13 11:33:38","views":0,"words":34,"readTime":0,"password":"","user":1,"categoryId":1,"category":{"id":0,"name":"","blogs":null},"tags":null}],"total":3,"pageNum":1,"pageSize":10,"size":3,"startRow":1,"endRow":3,"pages":1,"prePage":0,"nextPage":0,"isFirstPage":true,"isLastPage":true,"hasPreviousPage":false,"hasNextPage":false,"navigatePages":8,"navigatepageNums":[1],"navigateFirstPage":1,"navigateLastPage":1}
+2022-12-14 11:44:41.846 [32m[INFO][0m {e01c4495148c30177f22e836e0c6bef3} blog.go:51: {"blogs":{"list":[{"id":6,"title":"sdfas","firstPicture":"sdf","content":"asdf","description":"asdf","published":true,"recommend":false,"appreciation":false,"commentEnabled":false,"top":false,"createTime":"2022-12-13 08:39:11","updateTime":"2022-12-13 08:39:11","views":0,"words":23,"readTime":0,"password":"","user":1,"category":{"id":0,"name":"","blogs":null},"tags":null},{"id":7,"title":"sdaf","firstPicture":"sadf","content":"asdf","description":"sadf","published":true,"recommend":false,"appreciation":false,"commentEnabled":false,"top":false,"createTime":"2022-12-13 11:09:48","updateTime":"2022-12-13 11:09:48","views":0,"words":23,"readTime":0,"password":"","user":1,"category":{"id":0,"name":"","blogs":null},"tags":null},{"id":8,"title":"fdg","firstPicture":"sdfg","content":"dsfg","description":"dsfg","published":true,"recommend":false,"appreciation":false,"commentEnabled":false,"top":false,"createTime":"2022-12-13 11:33:38","updateTime":"2022-12-13 11:33:38","views":0,"words":34,"readTime":0,"password":"","user":1,"category":{"id":0,"name":"","blogs":null},"tags":null}],"total":3,"pageNum":1,"pageSize":10,"size":3,"startRow":1,"endRow":3,"pages":1,"prePage":0,"nextPage":0,"isFirstPage":true,"isLastPage":true,"hasPreviousPage":false,"hasNextPage":false,"navigatePages":8,"navigatepageNums":[1],"navigateFirstPage":1,"navigateLastPage":1},"categories":null}
+2022-12-14 11:44:41.878 [33m[DEBU][0m {e01c4495148c30177f22e836e0c6bef3} [  1 ms] [default] [go_blog] [rows:2  ] SHOW FULL COLUMNS FROM `category`
+2022-12-14 11:44:41.882 [33m[DEBU][0m {e01c4495148c30177f22e836e0c6bef3} [  1 ms] [default] [go_blog] [rows:1  ] SELECT `id`,`category_name` FROM `category`
+2022-12-14 11:44:41.885 [32m[INFO][0m {e01c4495148c30177f22e836e0c6bef3} blog.go:55: [{"id":1,"categoryName":"sdf"}]
+2022-12-14 11:45:46.367 [32m[INFO][0m pid[20176]: http server started listening on [:8090]
+2022-12-14 11:45:46.367 [32m[INFO][0m swagger ui is serving at address: http://127.0.0.1:8090/swagger/
+2022-12-14 11:45:46.372 [32m[INFO][0m openapi specification is serving at address: http://127.0.0.1:8090/api.json
+
+  ADDRESS | METHOD |         ROUTE         |                             HANDLER                             |          MIDDLEWARE            
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.MiddlewareCORS             | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.Ctx                        | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.I18NMiddleware             | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.ResponseHandler            | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/blog           | go_blog/internal/controller.cBlog.BlogDetail                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/blog           | go_blog/internal/controller.cBlog.CreateBlog                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/blogs          | go_blog/internal/controller.cBlog.ShowBlogs                     | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/categories     | go_blog/internal/controller.(*cCategory).ShowCategory           | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | DELETE | /admin/category       | go_blog/internal/controller.(*cCategory).DeleteCategory         | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/category       | go_blog/internal/controller.(*cCategory).AddCategory            | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | PUT    | /admin/category       | go_blog/internal/controller.(*cCategory).UpdateCategory         | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/categoryAndTag | go_blog/internal/controller.(*cIndex).CategoryAndTag            |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/dashboard      | go_blog/internal/controller.(*cDashboart).Dashboart             | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/login          | go_blog/internal/controller.cUser.Login                         |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | DELETE | /admin/tag            | go_blog/internal/controller.(*cTags).DeleteTags                 | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/tag            | go_blog/internal/controller.(*cTags).AddTags                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | PUT    | /admin/tag            | go_blog/internal/controller.(*cTags).UpdateTags                 | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/tags           | go_blog/internal/controller.(*cTags).ShowTags                   | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /api.json             | github.com/gogf/gf/v2/net/ghttp.(*Server).openapiSpec           |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /hello                | go_blog/internal/controller.(*cHello).Hello                     |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /swagger/*            | github.com/gogf/gf/v2/net/ghttp.(*Server).swaggerUI             | HOOK_BEFORE_SERVE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+
+2022-12-14 11:45:53.904 [33m[DEBU][0m {a015335f258c30178263b47d9f1ebea1} [  7 ms] [default] [go_blog] [rows:18 ] SHOW FULL COLUMNS FROM `blog`
+2022-12-14 11:45:53.910 [33m[DEBU][0m {a015335f258c30178263b47d9f1ebea1} [  1 ms] [default] [go_blog] [rows:1  ] SELECT COUNT(1) FROM `blog`
+2022-12-14 11:45:53.914 [33m[DEBU][0m {a015335f258c30178263b47d9f1ebea1} [  0 ms] [default] [go_blog] [rows:3  ] SELECT * FROM `blog` LIMIT 0,10
+2022-12-14 11:45:53.922 [33m[DEBU][0m {a015335f258c30178263b47d9f1ebea1} [  3 ms] [default] [go_blog] [rows:2  ] SHOW FULL COLUMNS FROM `category`
+2022-12-14 11:45:53.932 [33m[DEBU][0m {a015335f258c30178263b47d9f1ebea1} [  3 ms] [default] [go_blog] [rows:1  ] SELECT `id`,`category_name` FROM `category` WHERE `id` IN(1)
+2022-12-14 11:45:53.936 [32m[INFO][0m {a015335f258c30178263b47d9f1ebea1} blog.go:83: xxx {"list":[{"id":6,"title":"sdfas","firstPicture":"sdf","content":"asdf","description":"asdf","published":true,"recommend":false,"appreciation":false,"commentEnabled":false,"top":false,"createTime":"2022-12-13 08:39:11","updateTime":"2022-12-13 08:39:11","views":0,"words":23,"readTime":0,"password":"","user":1,"categoryId":1,"category":{"id":0,"name":"","blogs":null},"tags":null},{"id":7,"title":"sdaf","firstPicture":"sadf","content":"asdf","description":"sadf","published":true,"recommend":false,"appreciation":false,"commentEnabled":false,"top":false,"createTime":"2022-12-13 11:09:48","updateTime":"2022-12-13 11:09:48","views":0,"words":23,"readTime":0,"password":"","user":1,"categoryId":1,"category":{"id":0,"name":"","blogs":null},"tags":null},{"id":8,"title":"fdg","firstPicture":"sdfg","content":"dsfg","description":"dsfg","published":true,"recommend":false,"appreciation":false,"commentEnabled":false,"top":false,"createTime":"2022-12-13 11:33:38","updateTime":"2022-12-13 11:33:38","views":0,"words":34,"readTime":0,"password":"","user":1,"categoryId":1,"category":{"id":0,"name":"","blogs":null},"tags":null}],"total":3,"pageNum":1,"pageSize":10,"size":3,"startRow":1,"endRow":3,"pages":1,"prePage":0,"nextPage":0,"isFirstPage":true,"isLastPage":true,"hasPreviousPage":false,"hasNextPage":false,"navigatePages":8,"navigatepageNums":[1],"navigateFirstPage":1,"navigateLastPage":1}
+2022-12-14 11:45:53.992 [32m[INFO][0m {a015335f258c30178263b47d9f1ebea1} blog.go:51: {"blogs":{"list":[{"id":6,"title":"sdfas","firstPicture":"sdf","content":"asdf","description":"asdf","published":true,"recommend":false,"appreciation":false,"commentEnabled":false,"top":false,"createTime":"2022-12-13 08:39:11","updateTime":"2022-12-13 08:39:11","views":0,"words":23,"readTime":0,"password":"","user":1,"category":{"id":0,"name":"","blogs":null},"tags":null},{"id":7,"title":"sdaf","firstPicture":"sadf","content":"asdf","description":"sadf","published":true,"recommend":false,"appreciation":false,"commentEnabled":false,"top":false,"createTime":"2022-12-13 11:09:48","updateTime":"2022-12-13 11:09:48","views":0,"words":23,"readTime":0,"password":"","user":1,"category":{"id":0,"name":"","blogs":null},"tags":null},{"id":8,"title":"fdg","firstPicture":"sdfg","content":"dsfg","description":"dsfg","published":true,"recommend":false,"appreciation":false,"commentEnabled":false,"top":false,"createTime":"2022-12-13 11:33:38","updateTime":"2022-12-13 11:33:38","views":0,"words":34,"readTime":0,"password":"","user":1,"category":{"id":0,"name":"","blogs":null},"tags":null}],"total":3,"pageNum":1,"pageSize":10,"size":3,"startRow":1,"endRow":3,"pages":1,"prePage":0,"nextPage":0,"isFirstPage":true,"isLastPage":true,"hasPreviousPage":false,"hasNextPage":false,"navigatePages":8,"navigatepageNums":[1],"navigateFirstPage":1,"navigateLastPage":1},"categories":null}
+2022-12-14 11:45:54.026 [33m[DEBU][0m {a015335f258c30178263b47d9f1ebea1} [  1 ms] [default] [go_blog] [rows:1  ] SELECT `id`,`category_name` FROM `category`
+2022-12-14 11:45:54.031 [32m[INFO][0m {a015335f258c30178263b47d9f1ebea1} blog.go:55: [{"id":1,"categoryName":"sdf"}]
+2022-12-14 11:46:23.011 [32m[INFO][0m swagger ui is serving at address: http://127.0.0.1:8090/swagger/
+2022-12-14 11:46:23.011 [32m[INFO][0m pid[1092]: http server started listening on [:8090]
+2022-12-14 11:46:23.014 [32m[INFO][0m openapi specification is serving at address: http://127.0.0.1:8090/api.json
+
+  ADDRESS | METHOD |         ROUTE         |                             HANDLER                             |          MIDDLEWARE            
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.MiddlewareCORS             | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.Ctx                        | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.I18NMiddleware             | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.ResponseHandler            | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/blog           | go_blog/internal/controller.cBlog.BlogDetail                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/blog           | go_blog/internal/controller.cBlog.CreateBlog                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/blogs          | go_blog/internal/controller.cBlog.ShowBlogs                     | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/categories     | go_blog/internal/controller.(*cCategory).ShowCategory           | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | DELETE | /admin/category       | go_blog/internal/controller.(*cCategory).DeleteCategory         | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/category       | go_blog/internal/controller.(*cCategory).AddCategory            | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | PUT    | /admin/category       | go_blog/internal/controller.(*cCategory).UpdateCategory         | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/categoryAndTag | go_blog/internal/controller.(*cIndex).CategoryAndTag            |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/dashboard      | go_blog/internal/controller.(*cDashboart).Dashboart             | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/login          | go_blog/internal/controller.cUser.Login                         |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | DELETE | /admin/tag            | go_blog/internal/controller.(*cTags).DeleteTags                 | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/tag            | go_blog/internal/controller.(*cTags).AddTags                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | PUT    | /admin/tag            | go_blog/internal/controller.(*cTags).UpdateTags                 | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/tags           | go_blog/internal/controller.(*cTags).ShowTags                   | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /api.json             | github.com/gogf/gf/v2/net/ghttp.(*Server).openapiSpec           |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /hello                | go_blog/internal/controller.(*cHello).Hello                     |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /swagger/*            | github.com/gogf/gf/v2/net/ghttp.(*Server).swaggerUI             | HOOK_BEFORE_SERVE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+
+2022-12-14 11:46:35.056 [33m[DEBU][0m {14ddb3f32e8c30178f308c137e40088d} [  6 ms] [default] [go_blog] [rows:18 ] SHOW FULL COLUMNS FROM `blog`
+2022-12-14 11:46:35.061 [33m[DEBU][0m {14ddb3f32e8c30178f308c137e40088d} [  1 ms] [default] [go_blog] [rows:1  ] SELECT COUNT(1) FROM `blog`
+2022-12-14 11:46:35.069 [33m[DEBU][0m {14ddb3f32e8c30178f308c137e40088d} [  1 ms] [default] [go_blog] [rows:3  ] SELECT * FROM `blog` LIMIT 0,10
+2022-12-14 11:46:35.074 [33m[DEBU][0m {14ddb3f32e8c30178f308c137e40088d} [  1 ms] [default] [go_blog] [rows:2  ] SHOW FULL COLUMNS FROM `category`
+2022-12-14 11:46:35.079 [33m[DEBU][0m {14ddb3f32e8c30178f308c137e40088d} [  2 ms] [default] [go_blog] [rows:1  ] SELECT `id`,`category_name` FROM `category` WHERE `id` IN(1)
+2022-12-14 11:46:35.083 [32m[INFO][0m {14ddb3f32e8c30178f308c137e40088d} blog.go:83: xxx {"list":[{"id":6,"title":"sdfas","firstPicture":"sdf","content":"asdf","description":"asdf","published":true,"recommend":false,"appreciation":false,"commentEnabled":false,"top":false,"createTime":"2022-12-13 08:39:11","updateTime":"2022-12-13 08:39:11","views":0,"words":23,"readTime":0,"password":"","user":1,"categoryId":1,"category":{"id":1,"name":"sdf","blogs":null},"tags":null},{"id":7,"title":"sdaf","firstPicture":"sadf","content":"asdf","description":"sadf","published":true,"recommend":false,"appreciation":false,"commentEnabled":false,"top":false,"createTime":"2022-12-13 11:09:48","updateTime":"2022-12-13 11:09:48","views":0,"words":23,"readTime":0,"password":"","user":1,"categoryId":1,"category":{"id":1,"name":"sdf","blogs":null},"tags":null},{"id":8,"title":"fdg","firstPicture":"sdfg","content":"dsfg","description":"dsfg","published":true,"recommend":false,"appreciation":false,"commentEnabled":false,"top":false,"createTime":"2022-12-13 11:33:38","updateTime":"2022-12-13 11:33:38","views":0,"words":34,"readTime":0,"password":"","user":1,"categoryId":1,"category":{"id":1,"name":"sdf","blogs":null},"tags":null}],"total":3,"pageNum":1,"pageSize":10,"size":3,"startRow":1,"endRow":3,"pages":1,"prePage":0,"nextPage":0,"isFirstPage":true,"isLastPage":true,"hasPreviousPage":false,"hasNextPage":false,"navigatePages":8,"navigatepageNums":[1],"navigateFirstPage":1,"navigateLastPage":1}
+2022-12-14 11:46:35.116 [32m[INFO][0m {14ddb3f32e8c30178f308c137e40088d} blog.go:51: {"blogs":{"list":[{"id":6,"title":"sdfas","firstPicture":"sdf","content":"asdf","description":"asdf","published":true,"recommend":false,"appreciation":false,"commentEnabled":false,"top":false,"createTime":"2022-12-13 08:39:11","updateTime":"2022-12-13 08:39:11","views":0,"words":23,"readTime":0,"password":"","user":1,"category":{"id":1,"name":"sdf","blogs":null},"tags":null},{"id":7,"title":"sdaf","firstPicture":"sadf","content":"asdf","description":"sadf","published":true,"recommend":false,"appreciation":false,"commentEnabled":false,"top":false,"createTime":"2022-12-13 11:09:48","updateTime":"2022-12-13 11:09:48","views":0,"words":23,"readTime":0,"password":"","user":1,"category":{"id":1,"name":"sdf","blogs":null},"tags":null},{"id":8,"title":"fdg","firstPicture":"sdfg","content":"dsfg","description":"dsfg","published":true,"recommend":false,"appreciation":false,"commentEnabled":false,"top":false,"createTime":"2022-12-13 11:33:38","updateTime":"2022-12-13 11:33:38","views":0,"words":34,"readTime":0,"password":"","user":1,"category":{"id":1,"name":"sdf","blogs":null},"tags":null}],"total":3,"pageNum":1,"pageSize":10,"size":3,"startRow":1,"endRow":3,"pages":1,"prePage":0,"nextPage":0,"isFirstPage":true,"isLastPage":true,"hasPreviousPage":false,"hasNextPage":false,"navigatePages":8,"navigatepageNums":[1],"navigateFirstPage":1,"navigateLastPage":1},"categories":null}
+2022-12-14 11:46:35.160 [33m[DEBU][0m {14ddb3f32e8c30178f308c137e40088d} [  0 ms] [default] [go_blog] [rows:1  ] SELECT `id`,`category_name` FROM `category`
+2022-12-14 11:46:35.165 [32m[INFO][0m {14ddb3f32e8c30178f308c137e40088d} blog.go:55: [{"id":1,"categoryName":"sdf"}]
+2022-12-14 11:51:29.506 [32m[INFO][0m pid[1020]: http server started listening on [:8090]
+2022-12-14 11:51:29.506 [32m[INFO][0m swagger ui is serving at address: http://127.0.0.1:8090/swagger/
+2022-12-14 11:51:29.511 [32m[INFO][0m openapi specification is serving at address: http://127.0.0.1:8090/api.json
+
+  ADDRESS | METHOD |         ROUTE         |                             HANDLER                             |          MIDDLEWARE            
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.MiddlewareCORS             | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.Ctx                        | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.I18NMiddleware             | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.ResponseHandler            | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/blog           | go_blog/internal/controller.cBlog.BlogDetail                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/blog           | go_blog/internal/controller.cBlog.CreateBlog                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/blogs          | go_blog/internal/controller.cBlog.ShowBlogs                     | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/categories     | go_blog/internal/controller.(*cCategory).ShowCategory           | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | DELETE | /admin/category       | go_blog/internal/controller.(*cCategory).DeleteCategory         | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/category       | go_blog/internal/controller.(*cCategory).AddCategory            | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | PUT    | /admin/category       | go_blog/internal/controller.(*cCategory).UpdateCategory         | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/categoryAndTag | go_blog/internal/controller.(*cIndex).CategoryAndTag            |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/dashboard      | go_blog/internal/controller.(*cDashboart).Dashboart             | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/login          | go_blog/internal/controller.cUser.Login                         |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | DELETE | /admin/tag            | go_blog/internal/controller.(*cTags).DeleteTags                 | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/tag            | go_blog/internal/controller.(*cTags).AddTags                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | PUT    | /admin/tag            | go_blog/internal/controller.(*cTags).UpdateTags                 | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/tags           | go_blog/internal/controller.(*cTags).ShowTags                   | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /api.json             | github.com/gogf/gf/v2/net/ghttp.(*Server).openapiSpec           |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /hello                | go_blog/internal/controller.(*cHello).Hello                     |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /swagger/*            | github.com/gogf/gf/v2/net/ghttp.(*Server).swaggerUI             | HOOK_BEFORE_SERVE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+
+2022-12-14 11:51:32.586 [33m[DEBU][0m {4c10353a748c3017a9527a6fba73b2c5} [  6 ms] [default] [go_blog] [rows:18 ] SHOW FULL COLUMNS FROM `blog`
+2022-12-14 11:51:32.593 [33m[DEBU][0m {4c10353a748c3017a9527a6fba73b2c5} [  1 ms] [default] [go_blog] [rows:1  ] SELECT COUNT(1) FROM `blog`
+2022-12-14 11:51:32.598 [33m[DEBU][0m {4c10353a748c3017a9527a6fba73b2c5} [  1 ms] [default] [go_blog] [rows:3  ] SELECT * FROM `blog` LIMIT 0,10
+2022-12-14 11:51:32.604 [33m[DEBU][0m {4c10353a748c3017a9527a6fba73b2c5} [  2 ms] [default] [go_blog] [rows:2  ] SHOW FULL COLUMNS FROM `category`
+2022-12-14 11:51:32.611 [33m[DEBU][0m {4c10353a748c3017a9527a6fba73b2c5} [  2 ms] [default] [go_blog] [rows:1  ] SELECT `id`,`category_name` FROM `category` WHERE `id` IN(1)
+2022-12-14 11:51:32.617 [33m[DEBU][0m {4c10353a748c3017a9527a6fba73b2c5} [  1 ms] [default] [go_blog] [rows:1  ] SELECT `id`,`category_name` FROM `category`
+2022-12-14 11:51:32.621 [32m[INFO][0m {4c10353a748c3017a9527a6fba73b2c5} blog.go:54: [{"id":1,"categoryName":"sdf"}]
+2022-12-14 11:52:43.063 [32m[INFO][0m pid[21444]: http server started listening on [:8090]
+2022-12-14 11:52:43.063 [32m[INFO][0m swagger ui is serving at address: http://127.0.0.1:8090/swagger/
+2022-12-14 11:52:43.068 [32m[INFO][0m openapi specification is serving at address: http://127.0.0.1:8090/api.json
+
+  ADDRESS | METHOD |         ROUTE         |                             HANDLER                             |          MIDDLEWARE            
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.MiddlewareCORS             | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.Ctx                        | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.I18NMiddleware             | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.ResponseHandler            | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/blog           | go_blog/internal/controller.cBlog.BlogDetail                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/blog           | go_blog/internal/controller.cBlog.CreateBlog                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/blogs          | go_blog/internal/controller.cBlog.ShowBlogs                     | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/categories     | go_blog/internal/controller.(*cCategory).ShowCategory           | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | DELETE | /admin/category       | go_blog/internal/controller.(*cCategory).DeleteCategory         | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/category       | go_blog/internal/controller.(*cCategory).AddCategory            | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | PUT    | /admin/category       | go_blog/internal/controller.(*cCategory).UpdateCategory         | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/categoryAndTag | go_blog/internal/controller.(*cIndex).CategoryAndTag            |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/dashboard      | go_blog/internal/controller.(*cDashboart).Dashboart             | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/login          | go_blog/internal/controller.cUser.Login                         |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | DELETE | /admin/tag            | go_blog/internal/controller.(*cTags).DeleteTags                 | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/tag            | go_blog/internal/controller.(*cTags).AddTags                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | PUT    | /admin/tag            | go_blog/internal/controller.(*cTags).UpdateTags                 | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/tags           | go_blog/internal/controller.(*cTags).ShowTags                   | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /api.json             | github.com/gogf/gf/v2/net/ghttp.(*Server).openapiSpec           |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /hello                | go_blog/internal/controller.(*cHello).Hello                     |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /swagger/*            | github.com/gogf/gf/v2/net/ghttp.(*Server).swaggerUI             | HOOK_BEFORE_SERVE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+
+2022-12-14 11:52:50.267 [32m[INFO][0m pid[22288]: http server started listening on [:8090]
+2022-12-14 11:52:50.267 [32m[INFO][0m swagger ui is serving at address: http://127.0.0.1:8090/swagger/
+2022-12-14 11:52:50.272 [32m[INFO][0m openapi specification is serving at address: http://127.0.0.1:8090/api.json
+
+  ADDRESS | METHOD |         ROUTE         |                             HANDLER                             |          MIDDLEWARE            
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.MiddlewareCORS             | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.Ctx                        | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.I18NMiddleware             | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.ResponseHandler            | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/blog           | go_blog/internal/controller.cBlog.BlogDetail                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/blog           | go_blog/internal/controller.cBlog.CreateBlog                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/blogs          | go_blog/internal/controller.cBlog.ShowBlogs                     | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/categories     | go_blog/internal/controller.(*cCategory).ShowCategory           | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | DELETE | /admin/category       | go_blog/internal/controller.(*cCategory).DeleteCategory         | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/category       | go_blog/internal/controller.(*cCategory).AddCategory            | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | PUT    | /admin/category       | go_blog/internal/controller.(*cCategory).UpdateCategory         | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/categoryAndTag | go_blog/internal/controller.(*cIndex).CategoryAndTag            |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/dashboard      | go_blog/internal/controller.(*cDashboart).Dashboart             | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/login          | go_blog/internal/controller.cUser.Login                         |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | DELETE | /admin/tag            | go_blog/internal/controller.(*cTags).DeleteTags                 | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/tag            | go_blog/internal/controller.(*cTags).AddTags                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | PUT    | /admin/tag            | go_blog/internal/controller.(*cTags).UpdateTags                 | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/tags           | go_blog/internal/controller.(*cTags).ShowTags                   | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /api.json             | github.com/gogf/gf/v2/net/ghttp.(*Server).openapiSpec           |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /hello                | go_blog/internal/controller.(*cHello).Hello                     |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /swagger/*            | github.com/gogf/gf/v2/net/ghttp.(*Server).swaggerUI             | HOOK_BEFORE_SERVE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+
+2022-12-14 11:52:54.035 [33m[DEBU][0m {b8fcaa30878c3017e9d59a532bde5c7e} [ 11 ms] [default] [go_blog] [rows:18 ] SHOW FULL COLUMNS FROM `blog`
+2022-12-14 11:52:54.039 [33m[DEBU][0m {b8fcaa30878c3017e9d59a532bde5c7e} [  1 ms] [default] [go_blog] [rows:1  ] SELECT COUNT(1) FROM `blog`
+2022-12-14 11:52:54.043 [33m[DEBU][0m {b8fcaa30878c3017e9d59a532bde5c7e} [  0 ms] [default] [go_blog] [rows:3  ] SELECT * FROM `blog` LIMIT 0,10
+2022-12-14 11:52:54.050 [33m[DEBU][0m {b8fcaa30878c3017e9d59a532bde5c7e} [  2 ms] [default] [go_blog] [rows:2  ] SHOW FULL COLUMNS FROM `category`
+2022-12-14 11:52:54.059 [33m[DEBU][0m {b8fcaa30878c3017e9d59a532bde5c7e} [  4 ms] [default] [go_blog] [rows:1  ] SELECT `id`,`category_name` FROM `category` WHERE `id` IN(1)
+2022-12-14 11:52:54.063 [33m[DEBU][0m {b8fcaa30878c3017e9d59a532bde5c7e} [  1 ms] [default] [go_blog] [rows:1  ] SELECT `id`,`category_name` FROM `category`
+2022-12-14 11:52:54.067 [32m[INFO][0m {b8fcaa30878c3017e9d59a532bde5c7e} blog.go:54: [{"id":1,"categoryName":"sdf"}]
+2022-12-14 11:52:54.069 [32m[INFO][0m {b8fcaa30878c3017e9d59a532bde5c7e} blog.go:66: category.Category.Blogs 
+2022-12-14 11:52:54.072 [32m[INFO][0m {b8fcaa30878c3017e9d59a532bde5c7e} blog.go:66: category.Category.Blogs 
+2022-12-14 11:52:54.075 [32m[INFO][0m {b8fcaa30878c3017e9d59a532bde5c7e} blog.go:66: category.Category.Blogs 
+2022-12-14 11:53:16.123 [32m[INFO][0m swagger ui is serving at address: http://127.0.0.1:8090/swagger/
+2022-12-14 11:53:16.123 [32m[INFO][0m pid[2628]: http server started listening on [:8090]
+2022-12-14 11:53:16.126 [32m[INFO][0m openapi specification is serving at address: http://127.0.0.1:8090/api.json
+
+  ADDRESS | METHOD |         ROUTE         |                             HANDLER                             |          MIDDLEWARE            
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.MiddlewareCORS             | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.Ctx                        | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.I18NMiddleware             | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.ResponseHandler            | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/blog           | go_blog/internal/controller.cBlog.BlogDetail                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/blog           | go_blog/internal/controller.cBlog.CreateBlog                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/blogs          | go_blog/internal/controller.cBlog.ShowBlogs                     | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/categories     | go_blog/internal/controller.(*cCategory).ShowCategory           | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | DELETE | /admin/category       | go_blog/internal/controller.(*cCategory).DeleteCategory         | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/category       | go_blog/internal/controller.(*cCategory).AddCategory            | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | PUT    | /admin/category       | go_blog/internal/controller.(*cCategory).UpdateCategory         | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/categoryAndTag | go_blog/internal/controller.(*cIndex).CategoryAndTag            |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/dashboard      | go_blog/internal/controller.(*cDashboart).Dashboart             | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/login          | go_blog/internal/controller.cUser.Login                         |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | DELETE | /admin/tag            | go_blog/internal/controller.(*cTags).DeleteTags                 | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/tag            | go_blog/internal/controller.(*cTags).AddTags                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | PUT    | /admin/tag            | go_blog/internal/controller.(*cTags).UpdateTags                 | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/tags           | go_blog/internal/controller.(*cTags).ShowTags                   | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /api.json             | github.com/gogf/gf/v2/net/ghttp.(*Server).openapiSpec           |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /hello                | go_blog/internal/controller.(*cHello).Hello                     |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /swagger/*            | github.com/gogf/gf/v2/net/ghttp.(*Server).swaggerUI             | HOOK_BEFORE_SERVE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+
+2022-12-14 11:53:20.720 [33m[DEBU][0m {d46ea4668d8c30171748f75eecf0ff7b} [ 11 ms] [default] [go_blog] [rows:18 ] SHOW FULL COLUMNS FROM `blog`
+2022-12-14 11:53:20.729 [33m[DEBU][0m {d46ea4668d8c30171748f75eecf0ff7b} [  3 ms] [default] [go_blog] [rows:1  ] SELECT COUNT(1) FROM `blog`
+2022-12-14 11:53:20.735 [33m[DEBU][0m {d46ea4668d8c30171748f75eecf0ff7b} [  1 ms] [default] [go_blog] [rows:3  ] SELECT * FROM `blog` LIMIT 0,10
+2022-12-14 11:53:20.742 [33m[DEBU][0m {d46ea4668d8c30171748f75eecf0ff7b} [  2 ms] [default] [go_blog] [rows:2  ] SHOW FULL COLUMNS FROM `category`
+2022-12-14 11:53:20.752 [33m[DEBU][0m {d46ea4668d8c30171748f75eecf0ff7b} [  4 ms] [default] [go_blog] [rows:1  ] SELECT `id`,`category_name` FROM `category` WHERE `id` IN(1)
+2022-12-14 11:53:20.757 [33m[DEBU][0m {d46ea4668d8c30171748f75eecf0ff7b} [  1 ms] [default] [go_blog] [rows:1  ] SELECT `id`,`category_name` FROM `category`
+2022-12-14 11:53:20.760 [32m[INFO][0m {d46ea4668d8c30171748f75eecf0ff7b} blog.go:54: [{"id":1,"categoryName":"sdf"}]
+2022-12-14 11:53:20.763 [32m[INFO][0m {d46ea4668d8c30171748f75eecf0ff7b} blog.go:66: category.Category.Blogs 
+2022-12-14 11:53:20.766 [32m[INFO][0m {d46ea4668d8c30171748f75eecf0ff7b} blog.go:68: category.Category.Blogs []
+2022-12-14 11:53:20.769 [32m[INFO][0m {d46ea4668d8c30171748f75eecf0ff7b} blog.go:66: category.Category.Blogs 
+2022-12-14 11:53:20.771 [32m[INFO][0m {d46ea4668d8c30171748f75eecf0ff7b} blog.go:68: category.Category.Blogs []
+2022-12-14 11:53:20.774 [32m[INFO][0m {d46ea4668d8c30171748f75eecf0ff7b} blog.go:66: category.Category.Blogs 
+2022-12-14 11:53:20.777 [32m[INFO][0m {d46ea4668d8c30171748f75eecf0ff7b} blog.go:68: category.Category.Blogs []
+2022-12-14 11:54:24.410 [32m[INFO][0m swagger ui is serving at address: http://127.0.0.1:8090/swagger/
+2022-12-14 11:54:24.410 [32m[INFO][0m pid[768]: http server started listening on [:8090]
+2022-12-14 11:54:24.413 [32m[INFO][0m openapi specification is serving at address: http://127.0.0.1:8090/api.json
+
+  ADDRESS | METHOD |         ROUTE         |                             HANDLER                             |          MIDDLEWARE            
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.MiddlewareCORS             | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.Ctx                        | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.I18NMiddleware             | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.ResponseHandler            | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/blog           | go_blog/internal/controller.cBlog.BlogDetail                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/blog           | go_blog/internal/controller.cBlog.CreateBlog                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/blogs          | go_blog/internal/controller.cBlog.ShowBlogs                     | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/categories     | go_blog/internal/controller.(*cCategory).ShowCategory           | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | DELETE | /admin/category       | go_blog/internal/controller.(*cCategory).DeleteCategory         | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/category       | go_blog/internal/controller.(*cCategory).AddCategory            | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | PUT    | /admin/category       | go_blog/internal/controller.(*cCategory).UpdateCategory         | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/categoryAndTag | go_blog/internal/controller.(*cIndex).CategoryAndTag            |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/dashboard      | go_blog/internal/controller.(*cDashboart).Dashboart             | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/login          | go_blog/internal/controller.cUser.Login                         |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | DELETE | /admin/tag            | go_blog/internal/controller.(*cTags).DeleteTags                 | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/tag            | go_blog/internal/controller.(*cTags).AddTags                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | PUT    | /admin/tag            | go_blog/internal/controller.(*cTags).UpdateTags                 | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/tags           | go_blog/internal/controller.(*cTags).ShowTags                   | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /api.json             | github.com/gogf/gf/v2/net/ghttp.(*Server).openapiSpec           |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /hello                | go_blog/internal/controller.(*cHello).Hello                     |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /swagger/*            | github.com/gogf/gf/v2/net/ghttp.(*Server).swaggerUI             | HOOK_BEFORE_SERVE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+
+2022-12-14 11:54:26.731 [35m[WARN][0m {8c795ec69c8c3017d065df74aab80297} middleware.go:63: response exists something, skip ResponseHandler middleware
+2022-12-14 11:54:36.825 [33m[DEBU][0m {d0eff71f9f8c3017d165df748aec4b68} [  7 ms] [default] [go_blog] [rows:9  ] SHOW FULL COLUMNS FROM `user`
+2022-12-14 11:54:36.831 [33m[DEBU][0m {d0eff71f9f8c3017d165df748aec4b68} [  2 ms] [default] [go_blog] [rows:1  ] SELECT `id`,`username`,`password`,`nickname`,`avatar`,`email`,`create_time`,`update_time`,`role` FROM `user` WHERE `username`='admin' LIMIT 1
+2022-12-14 11:54:36.837 [32m[INFO][0m {d0eff71f9f8c3017d165df748aec4b68} user.go:28: 查询user: {"id":1,"username":"Admin","password":"$2a$10$4wnwMW8Z4Bn6wR4K1YlbquQunlHM/4rvudVBX8oyfx16xeVtI6i7C","nickname":"Admin","avatar":"/img/avatar.jpg","email":"admin@naccl.top","createTime":"2020-09-21 16:47:18","updateTime":"2020-09-21 16:47:22","role":"ROLE_admin"}
+2022-12-14 11:54:36.844 [32m[INFO][0m {d0eff71f9f8c3017d165df748aec4b68} user.go:30: 查询user: {"id":1,"username":"Admin","nickname":"Admin","avatar":"/img/avatar.jpg","email":"admin@naccl.top","createTime":0,"updateTime":0,"role":"ROLE_admin"}
+2022-12-14 11:54:36.850 [32m[INFO][0m {d0eff71f9f8c3017d165df748aec4b68} user.go:22: df {"id":1,"username":"Admin","nickname":"Admin","avatar":"/img/avatar.jpg","email":"admin@naccl.top","createTime":0,"updateTime":0,"role":"ROLE_admin"}
+2022-12-14 11:54:36.855 [32m[INFO][0m {d0eff71f9f8c3017d165df748aec4b68} user.go:24: df {"user":{"id":1,"username":"Admin","password":null,"nickname":"Admin","avatar":"/img/avatar.jpg","email":"admin@naccl.top","createTime":0,"updateTime":0,"role":"ROLE_admin"},"token":""}
+2022-12-14 11:54:42.513 [33m[DEBU][0m {40063673a08c3017d365df7434d8104f} [  1 ms] [default] [go_blog] [rows:18 ] SHOW FULL COLUMNS FROM `blog`
+2022-12-14 11:54:42.519 [33m[DEBU][0m {40063673a08c3017d365df7434d8104f} [  1 ms] [default] [go_blog] [rows:1  ] SELECT COUNT(1) FROM `blog`
+2022-12-14 11:54:42.524 [33m[DEBU][0m {40063673a08c3017d365df7434d8104f} [  1 ms] [default] [go_blog] [rows:3  ] SELECT * FROM `blog` LIMIT 0,10
+2022-12-14 11:54:42.529 [33m[DEBU][0m {40063673a08c3017d365df7434d8104f} [  1 ms] [default] [go_blog] [rows:2  ] SHOW FULL COLUMNS FROM `category`
+2022-12-14 11:54:42.536 [33m[DEBU][0m {40063673a08c3017d365df7434d8104f} [  2 ms] [default] [go_blog] [rows:1  ] SELECT `id`,`category_name` FROM `category` WHERE `id` IN(1)
+2022-12-14 11:54:42.542 [33m[DEBU][0m {40063673a08c3017d365df7434d8104f} [  2 ms] [default] [go_blog] [rows:1  ] SELECT `id`,`category_name` FROM `category`
+2022-12-14 11:54:42.544 [32m[INFO][0m {40063673a08c3017d365df7434d8104f} blog.go:54: [{"id":1,"categoryName":"sdf"}]
+2022-12-14 11:54:42.547 [32m[INFO][0m {40063673a08c3017d365df7434d8104f} blog.go:66: category.Category.Blogs 
+2022-12-14 11:54:42.549 [32m[INFO][0m {40063673a08c3017d365df7434d8104f} blog.go:68: category.Category.Blogs []
+2022-12-14 11:54:42.552 [32m[INFO][0m {40063673a08c3017d365df7434d8104f} blog.go:66: category.Category.Blogs 
+2022-12-14 11:54:42.554 [32m[INFO][0m {40063673a08c3017d365df7434d8104f} blog.go:68: category.Category.Blogs []
+2022-12-14 11:54:42.557 [32m[INFO][0m {40063673a08c3017d365df7434d8104f} blog.go:66: category.Category.Blogs 
+2022-12-14 11:54:42.559 [32m[INFO][0m {40063673a08c3017d365df7434d8104f} blog.go:68: category.Category.Blogs []
+2022-12-14 11:54:42.561 [32m[INFO][0m {40063673a08c3017d365df7434d8104f} blog.go:70: category.Category.Blogs {"blogs":{"list":[{"id":6,"title":"sdfas","firstPicture":"sdf","content":"asdf","description":"asdf","published":true,"recommend":false,"appreciation":false,"commentEnabled":false,"top":false,"createTime":"2022-12-13 08:39:11","updateTime":"2022-12-13 08:39:11","views":0,"words":23,"readTime":0,"password":"","user":1,"category":{"id":1,"name":"sdf","blogs":null},"tags":null},{"id":7,"title":"sdaf","firstPicture":"sadf","content":"asdf","description":"sadf","published":true,"recommend":false,"appreciation":false,"commentEnabled":false,"top":false,"createTime":"2022-12-13 11:09:48","updateTime":"2022-12-13 11:09:48","views":0,"words":23,"readTime":0,"password":"","user":1,"category":{"id":1,"name":"sdf","blogs":null},"tags":null},{"id":8,"title":"fdg","firstPicture":"sdfg","content":"dsfg","description":"dsfg","published":true,"recommend":false,"appreciation":false,"commentEnabled":false,"top":false,"createTime":"2022-12-13 11:33:38","updateTime":"2022-12-13 11:33:38","views":0,"words":34,"readTime":0,"password":"","user":1,"category":{"id":1,"name":"sdf","blogs":null},"tags":null}],"total":3,"pageNum":1,"pageSize":10,"size":3,"startRow":1,"endRow":3,"pages":1,"prePage":0,"nextPage":0,"isFirstPage":true,"isLastPage":true,"hasPreviousPage":false,"hasNextPage":false,"navigatePages":8,"navigatepageNums":[1],"navigateFirstPage":1,"navigateLastPage":1},"categories":[{"id":1,"name":"sdf","blogs":[]}]}
+2022-12-14 13:10:50.579 [32m[INFO][0m pid[8500]: http server started listening on [:8090]
+2022-12-14 13:10:50.579 [32m[INFO][0m swagger ui is serving at address: http://127.0.0.1:8090/swagger/
+2022-12-14 13:10:50.584 [32m[INFO][0m openapi specification is serving at address: http://127.0.0.1:8090/api.json
+
+  ADDRESS | METHOD |         ROUTE         |                             HANDLER                             |          MIDDLEWARE            
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.MiddlewareCORS             | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.Ctx                        | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.I18NMiddleware             | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.ResponseHandler            | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/blog           | go_blog/internal/controller.cBlog.BlogDetail                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/blog           | go_blog/internal/controller.cBlog.CreateBlog                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/blogs          | go_blog/internal/controller.cBlog.ShowBlogs                     | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/categories     | go_blog/internal/controller.(*cCategory).ShowCategory           | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | DELETE | /admin/category       | go_blog/internal/controller.(*cCategory).DeleteCategory         | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/category       | go_blog/internal/controller.(*cCategory).AddCategory            | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | PUT    | /admin/category       | go_blog/internal/controller.(*cCategory).UpdateCategory         | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/categoryAndTag | go_blog/internal/controller.(*cIndex).CategoryAndTag            |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/dashboard      | go_blog/internal/controller.(*cDashboart).Dashboart             | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/login          | go_blog/internal/controller.cUser.Login                         |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | DELETE | /admin/tag            | go_blog/internal/controller.(*cTags).DeleteTags                 | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/tag            | go_blog/internal/controller.(*cTags).AddTags                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | PUT    | /admin/tag            | go_blog/internal/controller.(*cTags).UpdateTags                 | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/tags           | go_blog/internal/controller.(*cTags).ShowTags                   | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /api.json             | github.com/gogf/gf/v2/net/ghttp.(*Server).openapiSpec           |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /hello                | go_blog/internal/controller.(*cHello).Hello                     |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /swagger/*            | github.com/gogf/gf/v2/net/ghttp.(*Server).swaggerUI             | HOOK_BEFORE_SERVE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+
+2022-12-14 13:10:56.028 [33m[DEBU][0m {a8a0904dc9903017510f906dc784acbe} [  5 ms] [default] [go_blog] [rows:18 ] SHOW FULL COLUMNS FROM `blog`
+2022-12-14 13:10:56.032 [33m[DEBU][0m {a8a0904dc9903017510f906dc784acbe} [  1 ms] [default] [go_blog] [rows:1  ] SELECT COUNT(1) FROM `blog`
+2022-12-14 13:10:56.037 [33m[DEBU][0m {a8a0904dc9903017510f906dc784acbe} [  2 ms] [default] [go_blog] [rows:3  ] SELECT * FROM `blog` LIMIT 0,10
+2022-12-14 13:10:56.042 [33m[DEBU][0m {a8a0904dc9903017510f906dc784acbe} [  1 ms] [default] [go_blog] [rows:2  ] SHOW FULL COLUMNS FROM `category`
+2022-12-14 13:10:56.048 [33m[DEBU][0m {a8a0904dc9903017510f906dc784acbe} [  2 ms] [default] [go_blog] [rows:1  ] SELECT `id`,`category_name` FROM `category` WHERE `id` IN(1)
+2022-12-14 13:10:56.056 [33m[DEBU][0m {a8a0904dc9903017510f906dc784acbe} [  1 ms] [default] [go_blog] [rows:1  ] SELECT `id`,`category_name` FROM `category`
+2022-12-14 13:10:56.059 [32m[INFO][0m {a8a0904dc9903017510f906dc784acbe} blog.go:54: [{"id":1,"categoryName":"sdf"}]
+2022-12-14 13:11:44.958 [32m[INFO][0m pid[9908]: http server started listening on [:8090]
+2022-12-14 13:11:44.958 [32m[INFO][0m swagger ui is serving at address: http://127.0.0.1:8090/swagger/
+2022-12-14 13:11:44.963 [32m[INFO][0m openapi specification is serving at address: http://127.0.0.1:8090/api.json
+
+  ADDRESS | METHOD |         ROUTE         |                             HANDLER                             |          MIDDLEWARE            
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.MiddlewareCORS             | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.Ctx                        | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.I18NMiddleware             | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.ResponseHandler            | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/blog           | go_blog/internal/controller.cBlog.BlogDetail                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/blog           | go_blog/internal/controller.cBlog.CreateBlog                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/blogs          | go_blog/internal/controller.cBlog.ShowBlogs                     | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/categories     | go_blog/internal/controller.(*cCategory).ShowCategory           | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | DELETE | /admin/category       | go_blog/internal/controller.(*cCategory).DeleteCategory         | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/category       | go_blog/internal/controller.(*cCategory).AddCategory            | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | PUT    | /admin/category       | go_blog/internal/controller.(*cCategory).UpdateCategory         | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/categoryAndTag | go_blog/internal/controller.(*cIndex).CategoryAndTag            |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/dashboard      | go_blog/internal/controller.(*cDashboart).Dashboart             | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/login          | go_blog/internal/controller.cUser.Login                         |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | DELETE | /admin/tag            | go_blog/internal/controller.(*cTags).DeleteTags                 | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/tag            | go_blog/internal/controller.(*cTags).AddTags                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | PUT    | /admin/tag            | go_blog/internal/controller.(*cTags).UpdateTags                 | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/tags           | go_blog/internal/controller.(*cTags).ShowTags                   | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /api.json             | github.com/gogf/gf/v2/net/ghttp.(*Server).openapiSpec           |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /hello                | go_blog/internal/controller.(*cHello).Hello                     |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /swagger/*            | github.com/gogf/gf/v2/net/ghttp.(*Server).swaggerUI             | HOOK_BEFORE_SERVE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+
+2022-12-14 13:11:47.570 [33m[DEBU][0m {14f0324dd590301733ffc041d8c2e646} [ 14 ms] [default] [go_blog] [rows:18 ] SHOW FULL COLUMNS FROM `blog`
+2022-12-14 13:11:47.576 [33m[DEBU][0m {14f0324dd590301733ffc041d8c2e646} [  1 ms] [default] [go_blog] [rows:1  ] SELECT COUNT(1) FROM `blog`
+2022-12-14 13:11:47.581 [33m[DEBU][0m {14f0324dd590301733ffc041d8c2e646} [  1 ms] [default] [go_blog] [rows:3  ] SELECT * FROM `blog` LIMIT 0,10
+2022-12-14 13:11:47.586 [33m[DEBU][0m {14f0324dd590301733ffc041d8c2e646} [  1 ms] [default] [go_blog] [rows:2  ] SHOW FULL COLUMNS FROM `category`
+2022-12-14 13:11:47.593 [33m[DEBU][0m {14f0324dd590301733ffc041d8c2e646} [  2 ms] [default] [go_blog] [rows:1  ] SELECT `id`,`category_name` FROM `category` WHERE `id` IN(1)
+2022-12-14 13:11:47.603 [33m[DEBU][0m {14f0324dd590301733ffc041d8c2e646} [  3 ms] [default] [go_blog] [rows:1  ] SELECT `id`,`category_name` FROM `category`
+2022-12-14 13:11:47.607 [32m[INFO][0m {14f0324dd590301733ffc041d8c2e646} blog.go:54: [{"id":1,"categoryName":"sdf"}]
+2022-12-14 13:13:00.211 [32m[INFO][0m pid[30548]: http server started listening on [:8090]
+2022-12-14 13:13:00.211 [32m[INFO][0m swagger ui is serving at address: http://127.0.0.1:8090/swagger/
+2022-12-14 13:13:00.216 [32m[INFO][0m openapi specification is serving at address: http://127.0.0.1:8090/api.json
+
+  ADDRESS | METHOD |         ROUTE         |                             HANDLER                             |          MIDDLEWARE            
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.MiddlewareCORS             | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.Ctx                        | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.I18NMiddleware             | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.ResponseHandler            | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/blog           | go_blog/internal/controller.cBlog.BlogDetail                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/blog           | go_blog/internal/controller.cBlog.CreateBlog                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/blogs          | go_blog/internal/controller.cBlog.ShowBlogs                     | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/categories     | go_blog/internal/controller.(*cCategory).ShowCategory           | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | DELETE | /admin/category       | go_blog/internal/controller.(*cCategory).DeleteCategory         | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/category       | go_blog/internal/controller.(*cCategory).AddCategory            | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | PUT    | /admin/category       | go_blog/internal/controller.(*cCategory).UpdateCategory         | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/categoryAndTag | go_blog/internal/controller.(*cIndex).CategoryAndTag            |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/dashboard      | go_blog/internal/controller.(*cDashboart).Dashboart             | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/login          | go_blog/internal/controller.cUser.Login                         |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | DELETE | /admin/tag            | go_blog/internal/controller.(*cTags).DeleteTags                 | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/tag            | go_blog/internal/controller.(*cTags).AddTags                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | PUT    | /admin/tag            | go_blog/internal/controller.(*cTags).UpdateTags                 | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/tags           | go_blog/internal/controller.(*cTags).ShowTags                   | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /api.json             | github.com/gogf/gf/v2/net/ghttp.(*Server).openapiSpec           |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /hello                | go_blog/internal/controller.(*cHello).Hello                     |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /swagger/*            | github.com/gogf/gf/v2/net/ghttp.(*Server).swaggerUI             | HOOK_BEFORE_SERVE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+
+2022-12-14 13:13:02.853 [33m[DEBU][0m {9444d9d4e690301728fdda5c46a2734d} [  7 ms] [default] [go_blog] [rows:18 ] SHOW FULL COLUMNS FROM `blog`
+2022-12-14 13:13:02.859 [33m[DEBU][0m {9444d9d4e690301728fdda5c46a2734d} [  1 ms] [default] [go_blog] [rows:1  ] SELECT COUNT(1) FROM `blog`
+2022-12-14 13:13:02.864 [33m[DEBU][0m {9444d9d4e690301728fdda5c46a2734d} [  2 ms] [default] [go_blog] [rows:3  ] SELECT * FROM `blog` LIMIT 0,10
+2022-12-14 13:13:02.878 [33m[DEBU][0m {9444d9d4e690301728fdda5c46a2734d} [  0 ms] [default] [go_blog] [rows:2  ] SHOW FULL COLUMNS FROM `category`
+2022-12-14 13:13:02.886 [33m[DEBU][0m {9444d9d4e690301728fdda5c46a2734d} [  4 ms] [default] [go_blog] [rows:1  ] SELECT `id`,`category_name` FROM `category` WHERE `id` IN(1)
+2022-12-14 13:13:02.898 [33m[DEBU][0m {9444d9d4e690301728fdda5c46a2734d} [  0 ms] [default] [go_blog] [rows:1  ] SELECT `id`,`category_name` FROM `category`
+2022-12-14 13:13:02.903 [32m[INFO][0m {9444d9d4e690301728fdda5c46a2734d} blog.go:54: [{"id":1,"categoryName":"sdf"}]
+2022-12-14 13:13:02.905 [35m[WARN][0m {9444d9d4e690301728fdda5c46a2734d} middleware.go:63: response exists something, skip ResponseHandler middleware
+2022-12-14 13:13:20.909 [32m[INFO][0m pid[26244]: http server started listening on [:8090]
+2022-12-14 13:13:20.909 [32m[INFO][0m swagger ui is serving at address: http://127.0.0.1:8090/swagger/
+2022-12-14 13:13:20.916 [32m[INFO][0m openapi specification is serving at address: http://127.0.0.1:8090/api.json
+
+  ADDRESS | METHOD |         ROUTE         |                             HANDLER                             |          MIDDLEWARE            
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.MiddlewareCORS             | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.Ctx                        | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.I18NMiddleware             | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.ResponseHandler            | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/blog           | go_blog/internal/controller.cBlog.BlogDetail                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/blog           | go_blog/internal/controller.cBlog.CreateBlog                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/blogs          | go_blog/internal/controller.cBlog.ShowBlogs                     | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/categories     | go_blog/internal/controller.(*cCategory).ShowCategory           | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | DELETE | /admin/category       | go_blog/internal/controller.(*cCategory).DeleteCategory         | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/category       | go_blog/internal/controller.(*cCategory).AddCategory            | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | PUT    | /admin/category       | go_blog/internal/controller.(*cCategory).UpdateCategory         | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/categoryAndTag | go_blog/internal/controller.(*cIndex).CategoryAndTag            |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/dashboard      | go_blog/internal/controller.(*cDashboart).Dashboart             | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/login          | go_blog/internal/controller.cUser.Login                         |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | DELETE | /admin/tag            | go_blog/internal/controller.(*cTags).DeleteTags                 | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/tag            | go_blog/internal/controller.(*cTags).AddTags                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | PUT    | /admin/tag            | go_blog/internal/controller.(*cTags).UpdateTags                 | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/tags           | go_blog/internal/controller.(*cTags).ShowTags                   | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /api.json             | github.com/gogf/gf/v2/net/ghttp.(*Server).openapiSpec           |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /hello                | go_blog/internal/controller.(*cHello).Hello                     |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /swagger/*            | github.com/gogf/gf/v2/net/ghttp.(*Server).swaggerUI             | HOOK_BEFORE_SERVE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+
+2022-12-14 13:13:22.367 [33m[DEBU][0m {7865c25feb903017b8a5c6792ab94fab} [  7 ms] [default] [go_blog] [rows:18 ] SHOW FULL COLUMNS FROM `blog`
+2022-12-14 13:13:22.377 [33m[DEBU][0m {7865c25feb903017b8a5c6792ab94fab} [  0 ms] [default] [go_blog] [rows:1  ] SELECT COUNT(1) FROM `blog`
+2022-12-14 13:13:22.388 [33m[DEBU][0m {7865c25feb903017b8a5c6792ab94fab} [  1 ms] [default] [go_blog] [rows:3  ] SELECT * FROM `blog` LIMIT 0,10
+2022-12-14 13:13:22.394 [33m[DEBU][0m {7865c25feb903017b8a5c6792ab94fab} [  2 ms] [default] [go_blog] [rows:2  ] SHOW FULL COLUMNS FROM `category`
+2022-12-14 13:13:22.404 [33m[DEBU][0m {7865c25feb903017b8a5c6792ab94fab} [  3 ms] [default] [go_blog] [rows:1  ] SELECT `id`,`category_name` FROM `category` WHERE `id` IN(1)
+2022-12-14 13:13:22.409 [33m[DEBU][0m {7865c25feb903017b8a5c6792ab94fab} [  1 ms] [default] [go_blog] [rows:1  ] SELECT `id`,`category_name` FROM `category`
+2022-12-14 13:13:22.413 [32m[INFO][0m {7865c25feb903017b8a5c6792ab94fab} blog.go:54: [{"id":1,"categoryName":"sdf"}]
+2022-12-14 13:13:51.310 [32m[INFO][0m pid[17348]: http server started listening on [:8090]
+2022-12-14 13:13:51.310 [32m[INFO][0m swagger ui is serving at address: http://127.0.0.1:8090/swagger/
+2022-12-14 13:13:51.315 [32m[INFO][0m openapi specification is serving at address: http://127.0.0.1:8090/api.json
+
+  ADDRESS | METHOD |         ROUTE         |                             HANDLER                             |          MIDDLEWARE            
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.MiddlewareCORS             | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.Ctx                        | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.I18NMiddleware             | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.ResponseHandler            | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/blog           | go_blog/internal/controller.cBlog.BlogDetail                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/blog           | go_blog/internal/controller.cBlog.CreateBlog                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/blogs          | go_blog/internal/controller.cBlog.ShowBlogs                     | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/categories     | go_blog/internal/controller.(*cCategory).ShowCategory           | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | DELETE | /admin/category       | go_blog/internal/controller.(*cCategory).DeleteCategory         | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/category       | go_blog/internal/controller.(*cCategory).AddCategory            | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | PUT    | /admin/category       | go_blog/internal/controller.(*cCategory).UpdateCategory         | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/categoryAndTag | go_blog/internal/controller.(*cIndex).CategoryAndTag            |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/dashboard      | go_blog/internal/controller.(*cDashboart).Dashboart             | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/login          | go_blog/internal/controller.cUser.Login                         |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | DELETE | /admin/tag            | go_blog/internal/controller.(*cTags).DeleteTags                 | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/tag            | go_blog/internal/controller.(*cTags).AddTags                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | PUT    | /admin/tag            | go_blog/internal/controller.(*cTags).UpdateTags                 | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/tags           | go_blog/internal/controller.(*cTags).ShowTags                   | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /api.json             | github.com/gogf/gf/v2/net/ghttp.(*Server).openapiSpec           |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /hello                | go_blog/internal/controller.(*cHello).Hello                     |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /swagger/*            | github.com/gogf/gf/v2/net/ghttp.(*Server).swaggerUI             | HOOK_BEFORE_SERVE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+
+2022-12-14 13:13:56.135 [33m[DEBU][0m {6447d83cf39030170a21603e9ebf3787} [  5 ms] [default] [go_blog] [rows:18 ] SHOW FULL COLUMNS FROM `blog`
+2022-12-14 13:13:56.140 [33m[DEBU][0m {6447d83cf39030170a21603e9ebf3787} [  1 ms] [default] [go_blog] [rows:1  ] SELECT COUNT(1) FROM `blog`
+2022-12-14 13:13:56.145 [33m[DEBU][0m {6447d83cf39030170a21603e9ebf3787} [  1 ms] [default] [go_blog] [rows:3  ] SELECT * FROM `blog` LIMIT 0,10
+2022-12-14 13:13:56.153 [33m[DEBU][0m {6447d83cf39030170a21603e9ebf3787} [  2 ms] [default] [go_blog] [rows:2  ] SHOW FULL COLUMNS FROM `category`
+2022-12-14 13:13:56.159 [33m[DEBU][0m {6447d83cf39030170a21603e9ebf3787} [  2 ms] [default] [go_blog] [rows:1  ] SELECT `id`,`category_name` FROM `category` WHERE `id` IN(1)
+2022-12-14 13:13:56.164 [33m[DEBU][0m {6447d83cf39030170a21603e9ebf3787} [  1 ms] [default] [go_blog] [rows:1  ] SELECT `id`,`category_name` FROM `category`
+2022-12-14 13:13:56.169 [32m[INFO][0m {6447d83cf39030170a21603e9ebf3787} blog.go:54: [{"id":1,"categoryName":"sdf"}]
+2022-12-14 13:15:18.884 [32m[INFO][0m pid[17268]: http server started listening on [:8090]
+2022-12-14 13:15:18.884 [32m[INFO][0m swagger ui is serving at address: http://127.0.0.1:8090/swagger/
+2022-12-14 13:15:18.890 [32m[INFO][0m openapi specification is serving at address: http://127.0.0.1:8090/api.json
+
+  ADDRESS | METHOD |         ROUTE         |                             HANDLER                             |          MIDDLEWARE            
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.MiddlewareCORS             | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.Ctx                        | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.I18NMiddleware             | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /*                    | go_blog/internal/service.IMiddleware.ResponseHandler            | GLOBAL MIDDLEWARE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/blog           | go_blog/internal/controller.cBlog.BlogDetail                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/blog           | go_blog/internal/controller.cBlog.CreateBlog                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/blogs          | go_blog/internal/controller.cBlog.ShowBlogs                     | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/categories     | go_blog/internal/controller.(*cCategory).ShowCategory           | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | DELETE | /admin/category       | go_blog/internal/controller.(*cCategory).DeleteCategory         | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/category       | go_blog/internal/controller.(*cCategory).AddCategory            | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | PUT    | /admin/category       | go_blog/internal/controller.(*cCategory).UpdateCategory         | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/categoryAndTag | go_blog/internal/controller.(*cIndex).CategoryAndTag            |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/dashboard      | go_blog/internal/controller.(*cDashboart).Dashboart             | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/login          | go_blog/internal/controller.cUser.Login                         |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | DELETE | /admin/tag            | go_blog/internal/controller.(*cTags).DeleteTags                 | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | POST   | /admin/tag            | go_blog/internal/controller.(*cTags).AddTags                    | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | PUT    | /admin/tag            | go_blog/internal/controller.(*cTags).UpdateTags                 | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /admin/tags           | go_blog/internal/controller.(*cTags).ShowTags                   | service.IMiddleware.TokenAuth  
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /api.json             | github.com/gogf/gf/v2/net/ghttp.(*Server).openapiSpec           |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | GET    | /hello                | go_blog/internal/controller.(*cHello).Hello                     |                                
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+  :8090   | ALL    | /swagger/*            | github.com/gogf/gf/v2/net/ghttp.(*Server).swaggerUI             | HOOK_BEFORE_SERVE              
+----------|--------|-----------------------|-----------------------------------------------------------------|--------------------------------
+

@@ -9,7 +9,7 @@ database:
     level: "all"
   default:
     link: "mysql:root:123456@tcp(127.0.0.1:3307)/go_blog"
-    debug: false
+    debug: ture
     updatedAt: "updated_at"
 
 
