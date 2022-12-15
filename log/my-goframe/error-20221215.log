@@ -182,3 +182,111 @@ Stack:
    21). github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
         C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_server_handler.go:132
 
+2022-12-15 16:33:22.942 {04f1b8006aea3017728d257d73907baf} 200 "DELETE http localhost:8090 /admin/moment?id=1 HTTP/1.1" 0.188, ::1, "http://localhost:8079/", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36", 52, "Database Operation Error", ""
+Stack:
+1. sql: expected 5 arguments, got 6, DELETE FROM `moment` WHERE `id`='id' AND `content`='content' AND `create_time`='create_time' AND `likes`='likes' AND `is_published`='is_published'
+   1).  github.com/gogf/gf/v2/database/gdb.(*Core).DoCommit
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/database/gdb/gdb_core_underlying.go:281
+   2).  github.com/gogf/gf/v2/database/gdb.(*Core).DoExec
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/database/gdb/gdb_core_underlying.go:135
+   3).  github.com/gogf/gf/v2/database/gdb.(*Core).DoDelete
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/database/gdb/gdb_core.go:627
+   4).  github.com/gogf/gf/v2/database/gdb.(*HookDeleteInput).Next
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/database/gdb/gdb_model_hook.go:154
+   5).  github.com/gogf/gf/v2/database/gdb.(*Model).Delete
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/database/gdb/gdb_model_delete.go:73
+   6).  go_blog/internal/logic/moment.(*sMoment).DeleteMoment
+        D:/goland_code/go_blog/internal/logic/moment/moment.go:94
+   7).  go_blog/internal/controller.(*cMoment).DeleteMoment
+        D:/goland_code/go_blog/internal/controller/moment.go:76
+   8).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:152
+   9).  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_func.go:55
+   10). github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:129
+   11). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.4
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:90
+   12). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:89
+   13). github.com/gogf/gf/v2/util/gutil.TryCatch
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/util/gutil/gutil.go:56
+   14). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:49
+   15). go_blog/internal/logic/middleware.(*sMiddleware).TokenAuth
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:124
+   16). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:55
+   17). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:54
+   18). go_blog/internal/logic/middleware.(*sMiddleware).ResponseHandler
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:59
+   19). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:96
+   20). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:95
+   21). go_blog/internal/logic/middleware.(*sMiddleware).I18NMiddleware
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:54
+   22). go_blog/internal/logic/middleware.(*sMiddleware).Ctx
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:104
+   23). go_blog/internal/logic/middleware.(*sMiddleware).MiddlewareCORS
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:94
+   24). github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_middleware_tracing.go:78
+   25). github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_server_handler.go:132
+
+2022-12-15 16:33:27.353 {c4cb14096bea3017738d257dd0a1203e} 200 "DELETE http localhost:8090 /admin/moment?id=1 HTTP/1.1" 0.164, ::1, "http://localhost:8079/", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36", 52, "Database Operation Error", ""
+Stack:
+1. sql: expected 5 arguments, got 6, DELETE FROM `moment` WHERE `id`='id' AND `content`='content' AND `create_time`='create_time' AND `likes`='likes' AND `is_published`='is_published'
+   1).  github.com/gogf/gf/v2/database/gdb.(*Core).DoCommit
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/database/gdb/gdb_core_underlying.go:281
+   2).  github.com/gogf/gf/v2/database/gdb.(*Core).DoExec
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/database/gdb/gdb_core_underlying.go:135
+   3).  github.com/gogf/gf/v2/database/gdb.(*Core).DoDelete
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/database/gdb/gdb_core.go:627
+   4).  github.com/gogf/gf/v2/database/gdb.(*HookDeleteInput).Next
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/database/gdb/gdb_model_hook.go:154
+   5).  github.com/gogf/gf/v2/database/gdb.(*Model).Delete
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/database/gdb/gdb_model_delete.go:73
+   6).  go_blog/internal/logic/moment.(*sMoment).DeleteMoment
+        D:/goland_code/go_blog/internal/logic/moment/moment.go:94
+   7).  go_blog/internal/controller.(*cMoment).DeleteMoment
+        D:/goland_code/go_blog/internal/controller/moment.go:76
+   8).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:152
+   9).  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_func.go:55
+   10). github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:129
+   11). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.4
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:90
+   12). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:89
+   13). github.com/gogf/gf/v2/util/gutil.TryCatch
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/util/gutil/gutil.go:56
+   14). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:49
+   15). go_blog/internal/logic/middleware.(*sMiddleware).TokenAuth
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:124
+   16). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:55
+   17). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:54
+   18). go_blog/internal/logic/middleware.(*sMiddleware).ResponseHandler
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:59
+   19). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:96
+   20). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:95
+   21). go_blog/internal/logic/middleware.(*sMiddleware).I18NMiddleware
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:54
+   22). go_blog/internal/logic/middleware.(*sMiddleware).Ctx
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:104
+   23). go_blog/internal/logic/middleware.(*sMiddleware).MiddlewareCORS
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:94
+   24). github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_middleware_tracing.go:78
+   25). github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_server_handler.go:132
+
