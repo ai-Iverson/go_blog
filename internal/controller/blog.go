@@ -40,6 +40,7 @@ func (c cBlog) CreateBlog(ctx context.Context, req *v1.CreateBlogReq) (res *v1.C
 	return
 }
 
+// 更新Blog
 func (c cBlog) UpdateBlog(ctx context.Context, req *v1.UpdateBlogReq) (res *v1.UpdateBlogRes, err error) {
 	err = service.Blog().UpdateBlog(ctx, *req)
 	return
@@ -58,7 +59,6 @@ func (c cBlog) ShowBlogs(ctx context.Context, req *v1.ShowBlogsReq) (res *v1.Sho
 
 	// 分类列表
 	categoryList, err := service.Category().GetCategoryList(ctx)
-	glog.Info(ctx, categoryList)
 	if err != nil {
 		return nil, err
 	}
@@ -115,6 +115,16 @@ func (c *cBlog) UpdateBlogVisibilityReq(ctx context.Context, req *v1.UpdateBlogV
 	})
 	if err != nil {
 		return
+	}
+	return
+}
+
+// 删除文章
+
+func (c *cBlog) DeleteBlog(ctx context.Context, req *v1.DeleteBlogReq) (res *v1.DeleteBlogRes, err error) {
+	err = service.Blog().DeleteBlog(ctx, req.Id)
+	if err != nil {
+		return nil, err
 	}
 	return
 }

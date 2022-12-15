@@ -78,10 +78,16 @@ func (s *sTags) UpdateTags(ctx context.Context, id int, name, color string) (err
 }
 
 func (s *sTags) DeleteTags(ctx context.Context, id int) (err error) {
-	_, err = dao.Tag.Ctx(ctx).Delete(dao.Tag.Columns().Id, id)
-	if err != nil {
-		glog.Error(ctx, err)
-		return errorcode.NewMyErr(ctx, errorcode.MyInternalError)
+	blogTag, err := dao.BlogTag.Ctx(ctx).Where(dao.BlogTag.Columns().TagId, id).All()
+	if blogTag.Len() == 0 {
+		_, err = dao.Tag.Ctx(ctx).Delete(dao.Tag.Columns().Id, id)
+		if err != nil {
+			glog.Error(ctx, err)
+			return errorcode.NewMyErr(ctx, errorcode.MyInternalError)
+		}
+	} else {
+		return errorcode.NewMyErr(ctx, errorcode.BadDelete, "已有Blog关联此Tag")
 	}
+
 	return
 }

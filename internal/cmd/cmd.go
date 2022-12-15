@@ -64,6 +64,7 @@ var (
 					controller.Blog.CreateBlog,
 					controller.Blog.ShowBlogs,
 					controller.Blog.UpdateBlog,
+					controller.Blog.DeleteBlog,
 					controller.Blog.BlogDetail,
 					controller.Blog.UpdateBlogTop,
 					controller.Blog.UpdateBlogRecommend,

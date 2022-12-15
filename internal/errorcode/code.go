@@ -79,4 +79,7 @@ var (
 
 	// 桌面40000起始
 	DesktopNotFound = New(404, 40001, `{#desktopNotExists}`)
+
+	// 删除异常
+	BadDelete = New(200, 500, `{#非法删除}`)
 )

@@ -140,3 +140,11 @@ type UpdateBlogReq struct {
 
 type UpdateBlogRes struct {
 }
+
+type DeleteBlogReq struct {
+	g.Meta `path:"/admin/blog" method:"delete" summart:"删除文章" tags:"删除文章"`
+	Id     int `json:"id"`
+}
+
+type DeleteBlogRes struct {
+}
