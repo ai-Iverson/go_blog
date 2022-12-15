@@ -69,6 +69,12 @@ var (
 					controller.Blog.UpdateBlogTop,
 					controller.Blog.UpdateBlogRecommend,
 					controller.Blog.UpdateBlogVisibilityReq,
+					controller.Moment.CteatMomet,
+					controller.Moment.ShoewMoments,
+					controller.Moment.UpdatePublishedStatus,
+					controller.Moment.MomoentDetil,
+					controller.Moment.UpdateMoment,
+					controller.Moment.DeleteMoment,
 				)
 			})
 			s.Run()
