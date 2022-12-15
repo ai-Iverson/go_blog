@@ -27,6 +27,7 @@ func New() *sBlog {
 }
 
 func (s sBlog) CreateBlog(ctx context.Context, in model.CreateBlogInput) (err error) {
+	// 数据库事务操作
 	g.DB().Transaction(context.TODO(), func(ctx context.Context, tx *gdb.TX) error {
 		blogId, err := tx.Ctx(ctx).InsertAndGetId("blog", entity.Blog{
 			Title:            in.Title,
@@ -107,7 +108,7 @@ func (s sBlog) UpdateBlog(ctx context.Context, in v1.UpdateBlogReq) (err error) 
 
 func (s *sBlog) BlogsList(ctx context.Context, title string, categroyId, page, size int) (out *model.BlogsListOutput, err error) {
 	out = &model.BlogsListOutput{}
-	b := dao.Blog.Ctx(ctx)
+	b := dao.Blog.Ctx(ctx).Order("is_top desc,create_time desc")
 
 	// 标题查询
 	if len(title) > 0 {
@@ -203,4 +204,20 @@ func (s *sBlog) UpdateBlogVisibility(ctx context.Context, in model.UpdateBlogVis
 		glog.Error(ctx, "数据更新错误")
 	}
 	return
+}
+
+func (s *sBlog) DeleteBlog(ctx context.Context, blogId int) (err error) {
+	g.DB().Transaction(context.TODO(), func(ctx context.Context, tx *gdb.TX) error {
+		_, err = dao.Blog.Ctx(ctx).Where(dao.Blog.Columns().Id, blogId).Delete()
+		if err != nil {
+			return err
+		}
+		//删除关联标签
+		_, err = dao.BlogTag.Ctx(ctx).Where(dao.BlogTag.Columns().BlogId, blogId).Delete()
+		if err != nil {
+			return err
+		}
+		return err
+	})
+	return err
 }

@@ -2,7 +2,6 @@ package controller
 
 import (
 	"context"
-	"github.com/gogf/gf/v2/os/glog"
 	v1 "go_blog/api/v1"
 	"go_blog/internal/service"
 	"go_blog/utility/utils"
@@ -18,7 +17,6 @@ func (c *cCategory) ShowCategory(ctx context.Context, req *v1.ShowCategoryReq) (
 	res = &v1.ShowCategoryRes{}
 	allCategory, err := service.Category().ShowCategory(ctx, req.PageNum, req.PageSize)
 	utils.MyCopy(ctx, res, allCategory)
-	glog.Info(ctx, "eeww", res)
 	return
 }
 

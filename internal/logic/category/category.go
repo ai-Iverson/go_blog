@@ -76,10 +76,15 @@ func (s *sCategory) UpdateCategory(ctx context.Context, id int, name string) (er
 }
 
 func (s *sCategory) DeleteCategory(ctx context.Context, id int) (err error) {
-	_, err = dao.Category.Ctx(ctx).Delete(dao.Category.Columns().Id, id)
-	if err != nil {
-		glog.Error(ctx, err)
-		return errorcode.NewMyErr(ctx, errorcode.MyInternalError)
+	categoryBlog, err := dao.Blog.Ctx(ctx).Where(dao.Blog.Columns().CategoryId, id).All()
+	if categoryBlog.Len() == 0 {
+		_, err = dao.Category.Ctx(ctx).Delete(dao.Category.Columns().Id, id)
+		if err != nil {
+			glog.Error(ctx, err)
+			return errorcode.NewMyErr(ctx, errorcode.MyInternalError)
+		}
 	}
-	return
+
+	return errorcode.NewMyErr(ctx, errorcode.BadDelete, "已有blog关联此categroy")
+
 }

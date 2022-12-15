@@ -1,0 +1,184 @@
+2022-12-15 11:54:24.974 {8440cbee30db301750b422353cac3a61} 401 "DELETE http localhost:8090 /admin/tag?id=4 HTTP/1.1" 0.009, ::1, "http://localhost:8079/", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36", 500, "不能删除", "{HttpCode:401}"
+Stack:
+1. 不能删除%!(EXTRA string=已有Blog关联此Tag)
+   1).  go_blog/internal/errorcode.NewMyErr
+        D:/goland_code/go_blog/internal/errorcode/code.go:47
+   2).  go_blog/internal/logic/tags.(*sTags).DeleteTags
+        D:/goland_code/go_blog/internal/logic/tags/tags.go:89
+   3).  go_blog/internal/controller.(*cTags).DeleteTags
+        D:/goland_code/go_blog/internal/controller/tags.go:37
+   4).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:152
+   5).  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_func.go:55
+   6).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:129
+   7).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.4
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:90
+   8).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:89
+   9).  github.com/gogf/gf/v2/util/gutil.TryCatch
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/util/gutil/gutil.go:56
+   10). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:49
+   11). go_blog/internal/logic/middleware.(*sMiddleware).TokenAuth
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:124
+   12). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:55
+   13). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:54
+   14). go_blog/internal/logic/middleware.(*sMiddleware).ResponseHandler
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:59
+   15). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:96
+   16). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:95
+   17). go_blog/internal/logic/middleware.(*sMiddleware).I18NMiddleware
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:54
+   18). go_blog/internal/logic/middleware.(*sMiddleware).Ctx
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:104
+   19). go_blog/internal/logic/middleware.(*sMiddleware).MiddlewareCORS
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:94
+   20). github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_middleware_tracing.go:78
+   21). github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_server_handler.go:132
+
+2022-12-15 12:54:51.660 {98f59b557dde3017bea5247e2c1e30c6} 200 "DELETE http localhost:8090 /admin/tag?id=4 HTTP/1.1" 0.017, ::1, "http://localhost:8079/", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36", 500, "{#不能删除}", "{HttpCode:200}"
+Stack:
+1. {#不能删除}%!(EXTRA string=已有Blog关联此Tag)
+   1).  go_blog/internal/errorcode.NewMyErr
+        D:/goland_code/go_blog/internal/errorcode/code.go:47
+   2).  go_blog/internal/logic/tags.(*sTags).DeleteTags
+        D:/goland_code/go_blog/internal/logic/tags/tags.go:89
+   3).  go_blog/internal/controller.(*cTags).DeleteTags
+        D:/goland_code/go_blog/internal/controller/tags.go:36
+   4).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:152
+   5).  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_func.go:55
+   6).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:129
+   7).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.4
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:90
+   8).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:89
+   9).  github.com/gogf/gf/v2/util/gutil.TryCatch
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/util/gutil/gutil.go:56
+   10). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:49
+   11). go_blog/internal/logic/middleware.(*sMiddleware).TokenAuth
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:124
+   12). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:55
+   13). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:54
+   14). go_blog/internal/logic/middleware.(*sMiddleware).ResponseHandler
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:59
+   15). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:96
+   16). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:95
+   17). go_blog/internal/logic/middleware.(*sMiddleware).I18NMiddleware
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:54
+   18). go_blog/internal/logic/middleware.(*sMiddleware).Ctx
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:104
+   19). go_blog/internal/logic/middleware.(*sMiddleware).MiddlewareCORS
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:94
+   20). github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_middleware_tracing.go:78
+   21). github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_server_handler.go:132
+
+2022-12-15 12:56:31.915 {3cf033ad94de3017b4afb464a3b63cb3} 200 "DELETE http localhost:8090 /admin/tag?id=4 HTTP/1.1" 0.019, ::1, "http://localhost:8079/", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36", 500, "{#非法删除}", "{HttpCode:200}"
+Stack:
+1. {#非法删除}%!(EXTRA string=已有Blog关联此Tag)
+   1).  go_blog/internal/errorcode.NewMyErr
+        D:/goland_code/go_blog/internal/errorcode/code.go:47
+   2).  go_blog/internal/logic/tags.(*sTags).DeleteTags
+        D:/goland_code/go_blog/internal/logic/tags/tags.go:89
+   3).  go_blog/internal/controller.(*cTags).DeleteTags
+        D:/goland_code/go_blog/internal/controller/tags.go:36
+   4).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:152
+   5).  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_func.go:55
+   6).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:129
+   7).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.4
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:90
+   8).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:89
+   9).  github.com/gogf/gf/v2/util/gutil.TryCatch
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/util/gutil/gutil.go:56
+   10). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:49
+   11). go_blog/internal/logic/middleware.(*sMiddleware).TokenAuth
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:124
+   12). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:55
+   13). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:54
+   14). go_blog/internal/logic/middleware.(*sMiddleware).ResponseHandler
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:59
+   15). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:96
+   16). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:95
+   17). go_blog/internal/logic/middleware.(*sMiddleware).I18NMiddleware
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:54
+   18). go_blog/internal/logic/middleware.(*sMiddleware).Ctx
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:104
+   19). go_blog/internal/logic/middleware.(*sMiddleware).MiddlewareCORS
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:94
+   20). github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_middleware_tracing.go:78
+   21). github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_server_handler.go:132
+
+2022-12-15 13:03:00.521 {20754f28efde301748e9472058b7bcba} 200 "DELETE http localhost:8090 /admin/category?id=2 HTTP/1.1" 0.012, ::1, "http://localhost:8079/", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36", 500, "{#非法删除}", "{HttpCode:200}"
+Stack:
+1. {#非法删除}%!(EXTRA string=已有blog关联此categroy)
+   1).  go_blog/internal/errorcode.NewMyErr
+        D:/goland_code/go_blog/internal/errorcode/code.go:47
+   2).  go_blog/internal/logic/category.(*sCategory).DeleteCategory
+        D:/goland_code/go_blog/internal/logic/category/category.go:88
+   3).  go_blog/internal/controller.(*cCategory).DeleteCategory
+        D:/goland_code/go_blog/internal/controller/category.go:36
+   4).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:152
+   5).  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_func.go:55
+   6).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:129
+   7).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.4
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:90
+   8).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:89
+   9).  github.com/gogf/gf/v2/util/gutil.TryCatch
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/util/gutil/gutil.go:56
+   10). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:49
+   11). go_blog/internal/logic/middleware.(*sMiddleware).TokenAuth
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:124
+   12). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:55
+   13). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:54
+   14). go_blog/internal/logic/middleware.(*sMiddleware).ResponseHandler
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:59
+   15). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:96
+   16). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:95
+   17). go_blog/internal/logic/middleware.(*sMiddleware).I18NMiddleware
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:54
+   18). go_blog/internal/logic/middleware.(*sMiddleware).Ctx
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:104
+   19). go_blog/internal/logic/middleware.(*sMiddleware).MiddlewareCORS
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:94
+   20). github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_middleware_tracing.go:78
+   21). github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_server_handler.go:132
+
