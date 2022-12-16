@@ -1,0 +1,88 @@
+2022-12-16 15:09:39.005 {d05384e16c343117d8eece6316c7a573} 200 "GET http localhost:8090 /admin/siteSettings HTTP/1.1" 0.029, ::1, "http://localhost:8079/", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36", -1, "", ""
+Stack:
+1. 错误Type
+   1).  go_blog/internal/logic/sitesstings.(*sSiteSettings).SiteSettingsDetil
+        D:/goland_code/go_blog/internal/logic/sitesstings/sitesettings.go:43
+   2).  go_blog/internal/controller.(*cSiteSttings).SiteSettingsDetil
+        D:/goland_code/go_blog/internal/controller/sitesttings.go:20
+   3).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:152
+   4).  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_func.go:55
+   5).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:129
+   6).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.4
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:90
+   7).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:89
+   8).  github.com/gogf/gf/v2/util/gutil.TryCatch
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/util/gutil/gutil.go:56
+   9).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:49
+   10). go_blog/internal/logic/middleware.(*sMiddleware).TokenAuth
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:124
+   11). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:55
+   12). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:54
+   13). go_blog/internal/logic/middleware.(*sMiddleware).ResponseHandler
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:59
+   14). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:96
+   15). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:95
+   16). go_blog/internal/logic/middleware.(*sMiddleware).I18NMiddleware
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:54
+   17). go_blog/internal/logic/middleware.(*sMiddleware).Ctx
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:104
+   18). go_blog/internal/logic/middleware.(*sMiddleware).MiddlewareCORS
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:94
+   19). github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_middleware_tracing.go:78
+   20). github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_server_handler.go:132
+
+2022-12-16 15:14:21.295 {64b3ae95ae343117ea809b154fa005f5} 200 "GET http localhost:8090 /admin/siteSettings HTTP/1.1" 0.124, ::1, "http://localhost:8079/", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36", -1, "", ""
+Stack:
+1. 错误Type
+   1).  go_blog/internal/logic/sitesstings.(*sSiteSettings).SiteSettingsDetil
+        D:/goland_code/go_blog/internal/logic/sitesstings/sitesettings.go:45
+   2).  go_blog/internal/controller.(*cSiteSttings).SiteSettingsDetil
+        D:/goland_code/go_blog/internal/controller/sitesttings.go:20
+   3).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:152
+   4).  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_func.go:55
+   5).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:129
+   6).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.4
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:90
+   7).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:89
+   8).  github.com/gogf/gf/v2/util/gutil.TryCatch
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/util/gutil/gutil.go:56
+   9).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:49
+   10). go_blog/internal/logic/middleware.(*sMiddleware).TokenAuth
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:124
+   11). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:55
+   12). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:54
+   13). go_blog/internal/logic/middleware.(*sMiddleware).ResponseHandler
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:59
+   14). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:96
+   15). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:95
+   16). go_blog/internal/logic/middleware.(*sMiddleware).I18NMiddleware
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:54
+   17). go_blog/internal/logic/middleware.(*sMiddleware).Ctx
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:104
+   18). go_blog/internal/logic/middleware.(*sMiddleware).MiddlewareCORS
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:94
+   19). github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_middleware_tracing.go:78
+   20). github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_server_handler.go:132
+
