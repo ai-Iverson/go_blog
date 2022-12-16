@@ -75,6 +75,8 @@ var (
 					controller.Moment.MomoentDetil,
 					controller.Moment.UpdateMoment,
 					controller.Moment.DeleteMoment,
+					controller.SiteSttings.SiteSettingsDetil,  // 站点设置
+					controller.SiteSttings.UpdateSiteSettings, // 更新站点设置
 				)
 			})
 			s.Run()

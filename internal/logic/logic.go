@@ -10,6 +10,7 @@ import (
 	_ "go_blog/internal/logic/context"
 	_ "go_blog/internal/logic/middleware"
 	_ "go_blog/internal/logic/moment"
+	_ "go_blog/internal/logic/sitesstings"
 	_ "go_blog/internal/logic/tags"
 	_ "go_blog/internal/logic/user"
 )
