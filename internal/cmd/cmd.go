@@ -77,6 +77,8 @@ var (
 					controller.Moment.DeleteMoment,
 					controller.SiteSttings.SiteSettingsDetil,  // 站点设置
 					controller.SiteSttings.UpdateSiteSettings, // 更新站点设置
+					controller.About.About,                    // 关于我
+					controller.About.UpdateAbout,              // 更新关于我
 				)
 			})
 			s.Run()
