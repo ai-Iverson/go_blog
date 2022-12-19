@@ -1,5 +1,5 @@
 server:
-  address:     ":8090"
+  address: ":8090"
   openapiPath: "/api.json"
   swaggerPath: "/swagger"
 
@@ -11,6 +11,7 @@ database:
     link: "mysql:root:123456@tcp(127.0.0.1:3307)/go_blog"
     debug: ture
     updatedAt: "updated_at"
+    charset: "utf8mb4"
 
 
 token:
