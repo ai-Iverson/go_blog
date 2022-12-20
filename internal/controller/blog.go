@@ -2,7 +2,6 @@ package controller
 
 import (
 	"context"
-	"github.com/gogf/gf/v2/os/glog"
 	"github.com/gogf/gf/v2/util/gconv"
 	v1 "go_blog/api/v1"
 	"go_blog/internal/model"
@@ -18,7 +17,6 @@ type cBlog struct {
 func (c cBlog) CreateBlog(ctx context.Context, req *v1.CreateBlogReq) (res *v1.CreateBlogRes, err error) {
 	userToken := service.Context().Get(ctx)
 	userId := userToken.Token.UserKey
-	glog.Info(ctx, "userID", userToken, userId, gconv.Int64(userId))
 	err = service.Blog().CreateBlog(ctx, model.CreateBlogInput{
 		Title:            req.Title,
 		FirstPicture:     req.FirstPicture,
@@ -120,11 +118,20 @@ func (c *cBlog) UpdateBlogVisibilityReq(ctx context.Context, req *v1.UpdateBlogV
 }
 
 // 删除文章
-
 func (c *cBlog) DeleteBlog(ctx context.Context, req *v1.DeleteBlogReq) (res *v1.DeleteBlogRes, err error) {
 	err = service.Blog().DeleteBlog(ctx, req.Id)
 	if err != nil {
 		return nil, err
 	}
 	return
+}
+
+// 前台blog展示
+func (c *cBlog) NbBlogs(ctx context.Context, req *v1.NbBlogsReq) (res *v1.NbBlogsRes, err error) {
+	res = &v1.NbBlogsRes{}
+	blogList, totalPage, err := service.Blog().NbBlogs(ctx, req.PageNum)
+	gconv.Scan(blogList.List, &res.List)
+	res.Totalpage = totalPage
+	return
+
 }

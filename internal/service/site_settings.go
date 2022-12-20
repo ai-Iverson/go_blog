@@ -12,6 +12,12 @@ import (
 type ISiteSettings interface {
 	SiteSettingsDetil(ctx context.Context) (out *model.SiteSettingsDetilOutput, err error)
 	UpdateSiteSettings(ctx context.Context, in model.UpdateSiteSettingsInput) (err error)
+	Site(ctx context.Context) (out *model.SiteOutput, err error)
+	Badges(ctx context.Context) (out []*model.Badges, err error)
+	Introduction(ctx context.Context) (out *model.Introduction, err error)
+	NewBlogList(ctx context.Context) (out []*model.NewBlogList, err error)
+	RandomBlogList(ctx context.Context) (out []*model.RandomBlogList, err error)
+	SiteInfo(ctx context.Context) (out *model.SiteInfo, err error)
 }
 
 var localSiteSettings ISiteSettings

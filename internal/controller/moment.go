@@ -2,7 +2,6 @@ package controller
 
 import (
 	"context"
-	"github.com/gogf/gf/v2/os/glog"
 	"github.com/gogf/gf/v2/util/gconv"
 	v1 "go_blog/api/v1"
 	"go_blog/internal/model"
@@ -35,7 +34,6 @@ func (c *cMoment) ShoewMoments(ctx context.Context, req *v1.ShowMomentsReq) (res
 
 	res = &v1.ShowMomentsRes{}
 	out, err := service.Moment().ShowMoments(ctx, req.PageNum, req.PageSize)
-	glog.Info(ctx, "out", out)
 
 	utils.MyCopy(ctx, &res, out)
 

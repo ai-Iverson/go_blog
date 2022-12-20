@@ -148,3 +148,13 @@ type DeleteBlogReq struct {
 
 type DeleteBlogRes struct {
 }
+
+type NbBlogsReq struct {
+	g.Meta  `path:"/blogs" method:"get" summart:"前台展示文章列表" tags:"前台展示文章列表"`
+	PageNum int `json:"PageNum"`
+}
+
+type NbBlogsRes struct {
+	List      []BlogBase `json:"list"`
+	Totalpage int        `json:"totalPage"`
+}
