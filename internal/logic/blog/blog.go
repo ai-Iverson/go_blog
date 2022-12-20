@@ -221,3 +221,34 @@ func (s *sBlog) DeleteBlog(ctx context.Context, blogId int) (err error) {
 	})
 	return err
 }
+
+func (s *sBlog) NbBlogs(ctx context.Context, page int) (out *model.BlogsListOutput, totalPage int, err error) {
+	out = &model.BlogsListOutput{}
+	b := dao.Blog.Ctx(ctx).Order("is_top desc,create_time desc")
+
+	// 总数
+	count, err := b.Count()
+	if err != nil {
+		return
+	}
+
+	result, err := b.Page(page, 5).All()
+	if err != nil {
+		return
+	}
+
+	err = gconv.Scan(result, &out.List)
+	if err != nil {
+		return
+	}
+
+	// 查询每个blog的categroy信息
+	err = dao.Category.Ctx(ctx).
+		Where(dao.Category.Columns().Id, gdb.ListItemValuesUnique(out.List, "CategoryId")).
+		ScanList(&out.List, "Category", "id:CategoryId")
+
+	// 分页信息
+	pagination, err := utils.Pagination(ctx, page, 5, gconv.Int(count), len(result))
+	totalPage = pagination.Pages
+	return
+}

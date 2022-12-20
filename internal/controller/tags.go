@@ -2,7 +2,6 @@ package controller
 
 import (
 	"context"
-	"github.com/gogf/gf/v2/os/glog"
 	v1 "go_blog/api/v1"
 	"go_blog/internal/service"
 	"go_blog/utility/utils"
@@ -18,7 +17,6 @@ func (c *cTags) ShowTags(ctx context.Context, req *v1.ShowTagsReq) (res *v1.Show
 	res = &v1.ShowTagsRes{}
 	allTags, err := service.Tags().ShowTags(ctx, req.PageNum, req.PageSize)
 	utils.MyCopy(ctx, res, allTags)
-	glog.Info(ctx, "eeww", res)
 	return
 }
 

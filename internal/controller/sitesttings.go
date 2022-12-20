@@ -26,11 +26,18 @@ func (c *cSiteSttings) SiteSettingsDetil(ctx context.Context, req *v1.SiteSettin
 
 }
 
-// UpdateSiteSettingsRes 更新站点设置
+// UpdateSiteSettings 更新站点设置
 func (c *cSiteSttings) UpdateSiteSettings(ctx context.Context, req *v1.UpdateSiteSettingsReq) (res *v1.UpdateSiteSettingsRes, err error) {
 	in := &model.UpdateSiteSettingsInput{}
 	utils.MyCopy(ctx, &in, req)
 	service.SiteSettings().UpdateSiteSettings(ctx, *in)
 
 	return nil, err
+}
+
+// 主页站点显示
+func (c *cSiteSttings) Site(ctx context.Context, req *v1.SiteReq) (res *v1.SiteRes, err error) {
+	out, err := service.SiteSettings().Site(ctx)
+	gconv.Scan(out, &res)
+	return
 }

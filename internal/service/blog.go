@@ -19,6 +19,7 @@ type IBlog interface {
 	UpdateBlogRecommend(ctx context.Context, blogId int, recommend bool) (err error)
 	UpdateBlogVisibility(ctx context.Context, in model.UpdateBlogVisibilityInput) (err error)
 	DeleteBlog(ctx context.Context, blogId int) (err error)
+	NbBlogs(ctx context.Context, page int) (out *model.BlogsListOutput, totalPage int, err error)
 }
 
 var localBlog IBlog
