@@ -35,7 +35,7 @@ func (c *cSiteSttings) UpdateSiteSettings(ctx context.Context, req *v1.UpdateSit
 	return nil, err
 }
 
-// 主页站点显示
+// Site 主页站点显示
 func (c *cSiteSttings) Site(ctx context.Context, req *v1.SiteReq) (res *v1.SiteRes, err error) {
 	out, err := service.SiteSettings().Site(ctx)
 	gconv.Scan(out, &res)

@@ -143,13 +143,40 @@ func (s *sBlog) BlogsList(ctx context.Context, title string, categroyId, page, s
 	err = dao.Category.Ctx(ctx).
 		Where(dao.Category.Columns().Id, gdb.ListItemValuesUnique(out.List, "CategoryId")).
 		ScanList(&out.List, "Category", "id:CategoryId")
+
+	// 查询每个blog的tag信息
+	for blogValue := 0; blogValue < len(out.List); blogValue++ {
+		blogTags, _ := dao.BlogTag.Ctx(ctx).Where(dao.BlogTag.Columns().BlogId, out.List[blogValue].Id).All()
+		var tags model.Tags
+		for blogTagsValue := 0; blogTagsValue < len(blogTags); blogTagsValue++ {
+			tag, _ := dao.Tag.Ctx(ctx).Where(dao.Tag.Columns().Id, blogTags[blogTagsValue].Map()["tag_id"].(int64)).All()
+			tagList := tag.List()
+			tags.Blogs = []string{}
+			tags.Id = gconv.Int(tagList[0]["id"].(int64))
+			tags.Color = tagList[0]["color"].(string)
+			tags.Name = tagList[0]["tag_name"].(string)
+			out.List[blogValue].Tags = append(out.List[blogValue].Tags, tags)
+
+		}
+
+	}
+
 	return
 
 }
 
 func (s *sBlog) BlogDetail(ctx context.Context, id int) (out *model.BlogDetailOutput, err error) {
 	out = &model.BlogDetailOutput{}
-	err = dao.Blog.Ctx(ctx).Where(dao.Blog.Columns().Id, id).Scan(&out)
+	blog := dao.Blog.Ctx(ctx).Where(dao.Blog.Columns().Id, id)
+	err = blog.Scan(&out)
+	blogres, err := blog.All()
+	blogMap := gconv.Map(blogres[0])
+	out.Top = gconv.Bool(blogMap["is_top"])
+	out.Published = gconv.Bool(blogMap["is_published"])
+	out.CommentEnabled = gconv.Bool(blogMap["is_comment_enabled"])
+	out.Recommend = gconv.Bool(blogMap["is_recommend"])
+	out.Appreciation = gconv.Bool(blogMap["is_appreciation"])
+
 	if err != nil {
 		return
 	}
@@ -159,7 +186,7 @@ func (s *sBlog) BlogDetail(ctx context.Context, id int) (out *model.BlogDetailOu
 		return
 	}
 
-	tagList := []*entity.BlogTag{}
+	var tagList []*entity.BlogTag
 	err = dao.BlogTag.Ctx(ctx).Where(dao.BlogTag.Columns().BlogId, id).Scan(&tagList)
 	if err != nil {
 		return
@@ -169,7 +196,6 @@ func (s *sBlog) BlogDetail(ctx context.Context, id int) (out *model.BlogDetailOu
 	if err != nil {
 		return
 	}
-
 	return
 
 }
@@ -246,6 +272,22 @@ func (s *sBlog) NbBlogs(ctx context.Context, page int) (out *model.BlogsListOutp
 	err = dao.Category.Ctx(ctx).
 		Where(dao.Category.Columns().Id, gdb.ListItemValuesUnique(out.List, "CategoryId")).
 		ScanList(&out.List, "Category", "id:CategoryId")
+
+	// 查询每个blog的tag信息
+	for blogValue := 0; blogValue < len(out.List); blogValue++ {
+		blogTags, _ := dao.BlogTag.Ctx(ctx).Where(dao.BlogTag.Columns().BlogId, out.List[blogValue].Id).All()
+		var tags model.Tags
+		for blogTagsValue := 0; blogTagsValue < len(blogTags); blogTagsValue++ {
+			tag, _ := dao.Tag.Ctx(ctx).Where(dao.Tag.Columns().Id, blogTags[blogTagsValue].Map()["tag_id"].(int64)).All()
+			tagList := tag.List()
+			tags.Blogs = []string{}
+			tags.Id = gconv.Int(tagList[0]["id"].(int64))
+			tags.Color = tagList[0]["color"].(string)
+			tags.Name = tagList[0]["tag_name"].(string)
+			out.List[blogValue].Tags = append(out.List[blogValue].Tags, tags)
+
+		}
+	}
 
 	// 分页信息
 	pagination, err := utils.Pagination(ctx, page, 5, gconv.Int(count), len(result))
