@@ -24,7 +24,7 @@ type CreateBlogInput struct {
 	TagList          []int  // 标签列表
 }
 type Blog struct {
-	ID               int         `json:"id"`
+	Id               int         `json:"id"`
 	Title            string      `json:"title"`
 	FirstPicture     string      `json:"firstPicture"`
 	Content          interface{} `json:"content"`
@@ -47,7 +47,7 @@ type Blog struct {
 		CategoryName string        `json:"name"`
 		Blogs        []interface{} `json:"blogs"`
 	} `json:"category"`
-	Tags []interface{} `json:"tags"`
+	Tags []Tags `json:"tags"`
 }
 
 type BlogsListOutput struct {

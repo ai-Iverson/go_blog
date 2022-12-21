@@ -4,7 +4,6 @@ import (
 	"context"
 	"github.com/gogf/gf/v2/database/gdb"
 	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/os/glog"
 	"github.com/gogf/gf/v2/util/gconv"
 	"go_blog/internal/dao"
 	"go_blog/internal/model"
@@ -112,7 +111,6 @@ func (s *sSiteSettings) Site(ctx context.Context) (out *model.SiteOutput, err er
 	//RandomBlogList
 	randomBlogList, err := service.SiteSettings().RandomBlogList(ctx)
 	gconv.Scan(randomBlogList, &out.RandomBlogList)
-	glog.Info(ctx, out)
 
 	// siteInfo
 	siteInfo, err := service.SiteSettings().SiteInfo(ctx)

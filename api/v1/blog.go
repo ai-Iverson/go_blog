@@ -158,3 +158,25 @@ type NbBlogsRes struct {
 	List      []BlogBase `json:"list"`
 	Totalpage int        `json:"totalPage"`
 }
+
+type NbBlogDetailReq struct {
+	g.Meta `path:"/blog" method:"get" summart:"前台文章详情" tags:"前台文章详情"`
+	Id     int `json:"id"`
+}
+
+type NbBlogDetailRes struct {
+	ID             int        `json:"id"`
+	Title          string     `json:"title"`
+	Content        string     `json:"content"`
+	Appreciation   bool       `json:"appreciation"`
+	CommentEnabled bool       `json:"commentEnabled"`
+	Top            bool       `json:"top"`
+	CreateTime     string     `json:"createTime"`
+	UpdateTime     string     `json:"updateTime"`
+	Views          int        `json:"views"`
+	Words          int        `json:"words"`
+	ReadTime       int        `json:"readTime"`
+	Password       string     `json:"password"`
+	Category       Categories `json:"category"`
+	Tags           []Tags     `json:"tags"`
+}

@@ -46,8 +46,9 @@ var (
 					controller.Hello,
 					controller.User.Login,
 					controller.Index.CategoryAndTag,
-					controller.SiteSttings.Site, // 主页站点显示
-					controller.Blog.NbBlogs,     // 主页blog显示
+					controller.SiteSttings.Site,  // 主页站点显示
+					controller.Blog.NbBlogs,      // 主页blog显示
+					controller.Blog.NbBlogDetail, // 主页blog详情
 				)
 			})
 			s.Group("/", func(group *ghttp.RouterGroup) {

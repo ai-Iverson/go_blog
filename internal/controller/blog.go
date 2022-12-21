@@ -135,3 +135,13 @@ func (c *cBlog) NbBlogs(ctx context.Context, req *v1.NbBlogsReq) (res *v1.NbBlog
 	return
 
 }
+
+// NbBlogDetail 前台文章详情
+func (c cBlog) NbBlogDetail(ctx context.Context, req *v1.NbBlogDetailReq) (res *v1.NbBlogDetailRes, err error) {
+	res = &v1.NbBlogDetailRes{}
+
+	out, err := service.Blog().BlogDetail(ctx, req.Id)
+	gconv.Scan(out, &res)
+
+	return
+}
