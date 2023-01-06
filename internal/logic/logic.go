@@ -8,6 +8,7 @@ import (
 	_ "go_blog/internal/logic/about"
 	_ "go_blog/internal/logic/blog"
 	_ "go_blog/internal/logic/category"
+	_ "go_blog/internal/logic/comment"
 	_ "go_blog/internal/logic/context"
 	_ "go_blog/internal/logic/middleware"
 	_ "go_blog/internal/logic/moment"
