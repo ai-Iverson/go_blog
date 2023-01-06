@@ -46,9 +46,11 @@ var (
 					controller.Hello,
 					controller.User.Login,
 					controller.Index.CategoryAndTag,
-					controller.SiteSttings.Site,  // 主页站点显示
-					controller.Blog.NbBlogs,      // 主页blog显示
-					controller.Blog.NbBlogDetail, // 主页blog详情
+					controller.SiteSttings.Site,    // 主页站点显示
+					controller.Blog.NbBlogs,        // 主页blog显示
+					controller.Blog.NbBlogDetail,   // 主页blog详情
+					controller.Comment.Comment,     // 评论
+					controller.Comment.CommentList, // 评论列表
 				)
 			})
 			s.Group("/", func(group *ghttp.RouterGroup) {

@@ -1,0 +1,592 @@
+2023-01-04 14:19:39.386 {e893ebcbb8063717202323646271aee4} 500 "POST http localhost:8090 /admin/login HTTP/1.1" 2.030, ::1, "http://localhost:8079/", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36", 50, "Internal Error", ""
+Stack:
+1. exception recovered
+   1).  go_blog/internal/controller.cUser.Login
+        D:/goland_code/go_blog/internal/controller/user.go:24
+   2).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:152
+   3).  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_func.go:55
+   4).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:129
+   5).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.4
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:90
+   6).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:89
+   7).  github.com/gogf/gf/v2/util/gutil.TryCatch
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/util/gutil/gutil.go:56
+   8).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:49
+   9).  go_blog/internal/logic/middleware.(*sMiddleware).ResponseHandler
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:59
+   10). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:96
+   11). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:95
+   12). go_blog/internal/logic/middleware.(*sMiddleware).I18NMiddleware
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:54
+   13). go_blog/internal/logic/middleware.(*sMiddleware).Ctx
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:104
+   14). go_blog/internal/logic/middleware.(*sMiddleware).MiddlewareCORS
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:94
+   15). github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_middleware_tracing.go:78
+   16). github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_server_handler.go:132
+2. runtime error: invalid memory address or nil pointer dereference
+
+2023-01-04 14:19:41.047 {5c6f832fb9063717212323641c6d84bd} 500 "POST http localhost:8090 /admin/login HTTP/1.1" 2.020, ::1, "http://localhost:8079/", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36", 50, "Internal Error", ""
+Stack:
+1. exception recovered
+   1).  go_blog/internal/controller.cUser.Login
+        D:/goland_code/go_blog/internal/controller/user.go:24
+   2).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:152
+   3).  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_func.go:55
+   4).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:129
+   5).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.4
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:90
+   6).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:89
+   7).  github.com/gogf/gf/v2/util/gutil.TryCatch
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/util/gutil/gutil.go:56
+   8).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:49
+   9).  go_blog/internal/logic/middleware.(*sMiddleware).ResponseHandler
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:59
+   10). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:96
+   11). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:95
+   12). go_blog/internal/logic/middleware.(*sMiddleware).I18NMiddleware
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:54
+   13). go_blog/internal/logic/middleware.(*sMiddleware).Ctx
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:104
+   14). go_blog/internal/logic/middleware.(*sMiddleware).MiddlewareCORS
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:94
+   15). github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_middleware_tracing.go:78
+   16). github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_server_handler.go:132
+2. runtime error: invalid memory address or nil pointer dereference
+
+2023-01-04 14:20:25.377 {a85d2981c3063717e8c334352e456d34} 500 "POST http localhost:8090 /admin/login HTTP/1.1" 2.031, ::1, "http://localhost:8079/", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36", 50, "Internal Error", ""
+Stack:
+1. exception recovered
+   1).  go_blog/internal/controller.cUser.Login
+        D:/goland_code/go_blog/internal/controller/user.go:24
+   2).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:152
+   3).  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_func.go:55
+   4).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:129
+   5).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.4
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:90
+   6).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:89
+   7).  github.com/gogf/gf/v2/util/gutil.TryCatch
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/util/gutil/gutil.go:56
+   8).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:49
+   9).  go_blog/internal/logic/middleware.(*sMiddleware).ResponseHandler
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:59
+   10). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:96
+   11). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:95
+   12). go_blog/internal/logic/middleware.(*sMiddleware).I18NMiddleware
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:54
+   13). go_blog/internal/logic/middleware.(*sMiddleware).Ctx
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:104
+   14). go_blog/internal/logic/middleware.(*sMiddleware).MiddlewareCORS
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:94
+   15). github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_middleware_tracing.go:78
+   16). github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_server_handler.go:132
+2. runtime error: invalid memory address or nil pointer dereference
+
+2023-01-04 14:21:04.782 {cc1319aecc063717e9c33435d0fbe500} 500 "POST http localhost:8090 /admin/login HTTP/1.1" 2.027, ::1, "http://localhost:8079/", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36", 50, "Internal Error", ""
+Stack:
+1. exception recovered
+   1).  go_blog/internal/controller.cUser.Login
+        D:/goland_code/go_blog/internal/controller/user.go:24
+   2).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:152
+   3).  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_func.go:55
+   4).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:129
+   5).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.4
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:90
+   6).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:89
+   7).  github.com/gogf/gf/v2/util/gutil.TryCatch
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/util/gutil/gutil.go:56
+   8).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:49
+   9).  go_blog/internal/logic/middleware.(*sMiddleware).ResponseHandler
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:59
+   10). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:96
+   11). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:95
+   12). go_blog/internal/logic/middleware.(*sMiddleware).I18NMiddleware
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:54
+   13). go_blog/internal/logic/middleware.(*sMiddleware).Ctx
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:104
+   14). go_blog/internal/logic/middleware.(*sMiddleware).MiddlewareCORS
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:94
+   15). github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_middleware_tracing.go:78
+   16). github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_server_handler.go:132
+2. runtime error: invalid memory address or nil pointer dereference
+
+2023-01-04 14:21:06.560 {34666718cd063717eac33435c74dcdf9} 500 "POST http localhost:8090 /admin/login HTTP/1.1" 2.023, ::1, "http://localhost:8079/", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36", 50, "Internal Error", ""
+Stack:
+1. exception recovered
+   1).  go_blog/internal/controller.cUser.Login
+        D:/goland_code/go_blog/internal/controller/user.go:24
+   2).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:152
+   3).  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_func.go:55
+   4).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:129
+   5).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.4
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:90
+   6).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:89
+   7).  github.com/gogf/gf/v2/util/gutil.TryCatch
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/util/gutil/gutil.go:56
+   8).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:49
+   9).  go_blog/internal/logic/middleware.(*sMiddleware).ResponseHandler
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:59
+   10). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:96
+   11). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:95
+   12). go_blog/internal/logic/middleware.(*sMiddleware).I18NMiddleware
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:54
+   13). go_blog/internal/logic/middleware.(*sMiddleware).Ctx
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:104
+   14). go_blog/internal/logic/middleware.(*sMiddleware).MiddlewareCORS
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:94
+   15). github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_middleware_tracing.go:78
+   16). github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_server_handler.go:132
+2. runtime error: invalid memory address or nil pointer dereference
+
+2023-01-04 14:21:06.874 {4871f42acd063717ebc33435ec666c24} 500 "POST http localhost:8090 /admin/login HTTP/1.1" 2.024, ::1, "http://localhost:8079/", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36", 50, "Internal Error", ""
+Stack:
+1. exception recovered
+   1).  go_blog/internal/controller.cUser.Login
+        D:/goland_code/go_blog/internal/controller/user.go:24
+   2).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:152
+   3).  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_func.go:55
+   4).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:129
+   5).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.4
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:90
+   6).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:89
+   7).  github.com/gogf/gf/v2/util/gutil.TryCatch
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/util/gutil/gutil.go:56
+   8).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:49
+   9).  go_blog/internal/logic/middleware.(*sMiddleware).ResponseHandler
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:59
+   10). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:96
+   11). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:95
+   12). go_blog/internal/logic/middleware.(*sMiddleware).I18NMiddleware
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:54
+   13). go_blog/internal/logic/middleware.(*sMiddleware).Ctx
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:104
+   14). go_blog/internal/logic/middleware.(*sMiddleware).MiddlewareCORS
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:94
+   15). github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_middleware_tracing.go:78
+   16). github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_server_handler.go:132
+2. runtime error: invalid memory address or nil pointer dereference
+
+2023-01-04 14:21:07.045 {c8ea7235cd063717ecc33435f8a20990} 500 "POST http localhost:8090 /admin/login HTTP/1.1" 2.019, ::1, "http://localhost:8079/", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36", 50, "Internal Error", ""
+Stack:
+1. exception recovered
+   1).  go_blog/internal/controller.cUser.Login
+        D:/goland_code/go_blog/internal/controller/user.go:24
+   2).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:152
+   3).  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_func.go:55
+   4).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:129
+   5).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.4
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:90
+   6).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:89
+   7).  github.com/gogf/gf/v2/util/gutil.TryCatch
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/util/gutil/gutil.go:56
+   8).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:49
+   9).  go_blog/internal/logic/middleware.(*sMiddleware).ResponseHandler
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:59
+   10). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:96
+   11). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:95
+   12). go_blog/internal/logic/middleware.(*sMiddleware).I18NMiddleware
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:54
+   13). go_blog/internal/logic/middleware.(*sMiddleware).Ctx
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:104
+   14). go_blog/internal/logic/middleware.(*sMiddleware).MiddlewareCORS
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:94
+   15). github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_middleware_tracing.go:78
+   16). github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_server_handler.go:132
+2. runtime error: invalid memory address or nil pointer dereference
+
+2023-01-04 14:21:35.429 {b899c8d0d3063717edc33435cba986c7} 500 "POST http localhost:8090 /admin/login HTTP/1.1" 2.027, ::1, "http://localhost:8079/", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36", 50, "Internal Error", ""
+Stack:
+1. exception recovered
+   1).  go_blog/internal/controller.cUser.Login
+        D:/goland_code/go_blog/internal/controller/user.go:24
+   2).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:152
+   3).  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_func.go:55
+   4).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:129
+   5).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.4
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:90
+   6).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:89
+   7).  github.com/gogf/gf/v2/util/gutil.TryCatch
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/util/gutil/gutil.go:56
+   8).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:49
+   9).  go_blog/internal/logic/middleware.(*sMiddleware).ResponseHandler
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:59
+   10). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:96
+   11). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:95
+   12). go_blog/internal/logic/middleware.(*sMiddleware).I18NMiddleware
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:54
+   13). go_blog/internal/logic/middleware.(*sMiddleware).Ctx
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:104
+   14). go_blog/internal/logic/middleware.(*sMiddleware).MiddlewareCORS
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:94
+   15). github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_middleware_tracing.go:78
+   16). github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_server_handler.go:132
+2. runtime error: invalid memory address or nil pointer dereference
+
+2023-01-04 14:21:35.567 {185c57d9d3063717eec3343565edcfa7} 500 "POST http localhost:8090 /admin/login HTTP/1.1" 2.022, ::1, "http://localhost:8079/", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36", 50, "Internal Error", ""
+Stack:
+1. exception recovered
+   1).  go_blog/internal/controller.cUser.Login
+        D:/goland_code/go_blog/internal/controller/user.go:24
+   2).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:152
+   3).  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_func.go:55
+   4).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:129
+   5).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.4
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:90
+   6).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:89
+   7).  github.com/gogf/gf/v2/util/gutil.TryCatch
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/util/gutil/gutil.go:56
+   8).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:49
+   9).  go_blog/internal/logic/middleware.(*sMiddleware).ResponseHandler
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:59
+   10). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:96
+   11). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:95
+   12). go_blog/internal/logic/middleware.(*sMiddleware).I18NMiddleware
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:54
+   13). go_blog/internal/logic/middleware.(*sMiddleware).Ctx
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:104
+   14). go_blog/internal/logic/middleware.(*sMiddleware).MiddlewareCORS
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:94
+   15). github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_middleware_tracing.go:78
+   16). github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_server_handler.go:132
+2. runtime error: invalid memory address or nil pointer dereference
+
+2023-01-04 14:21:35.746 {50b5d4e3d3063717efc3343564905685} 500 "POST http localhost:8090 /admin/login HTTP/1.1" 2.024, ::1, "http://localhost:8079/", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36", 50, "Internal Error", ""
+Stack:
+1. exception recovered
+   1).  go_blog/internal/controller.cUser.Login
+        D:/goland_code/go_blog/internal/controller/user.go:24
+   2).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:152
+   3).  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_func.go:55
+   4).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:129
+   5).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.4
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:90
+   6).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:89
+   7).  github.com/gogf/gf/v2/util/gutil.TryCatch
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/util/gutil/gutil.go:56
+   8).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:49
+   9).  go_blog/internal/logic/middleware.(*sMiddleware).ResponseHandler
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:59
+   10). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:96
+   11). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:95
+   12). go_blog/internal/logic/middleware.(*sMiddleware).I18NMiddleware
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:54
+   13). go_blog/internal/logic/middleware.(*sMiddleware).Ctx
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:104
+   14). go_blog/internal/logic/middleware.(*sMiddleware).MiddlewareCORS
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:94
+   15). github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_middleware_tracing.go:78
+   16). github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_server_handler.go:132
+2. runtime error: invalid memory address or nil pointer dereference
+
+2023-01-04 14:21:35.889 {e4a76decd3063717f0c334350ffc0e73} 500 "POST http localhost:8090 /admin/login HTTP/1.1" 2.024, ::1, "http://localhost:8079/", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36", 50, "Internal Error", ""
+Stack:
+1. exception recovered
+   1).  go_blog/internal/controller.cUser.Login
+        D:/goland_code/go_blog/internal/controller/user.go:24
+   2).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:152
+   3).  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_func.go:55
+   4).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:129
+   5).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.4
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:90
+   6).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:89
+   7).  github.com/gogf/gf/v2/util/gutil.TryCatch
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/util/gutil/gutil.go:56
+   8).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:49
+   9).  go_blog/internal/logic/middleware.(*sMiddleware).ResponseHandler
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:59
+   10). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:96
+   11). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:95
+   12). go_blog/internal/logic/middleware.(*sMiddleware).I18NMiddleware
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:54
+   13). go_blog/internal/logic/middleware.(*sMiddleware).Ctx
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:104
+   14). go_blog/internal/logic/middleware.(*sMiddleware).MiddlewareCORS
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:94
+   15). github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_middleware_tracing.go:78
+   16). github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_server_handler.go:132
+2. runtime error: invalid memory address or nil pointer dereference
+
+2023-01-04 14:21:36.039 {c07277f5d3063717f1c33435b10ed424} 500 "POST http localhost:8090 /admin/login HTTP/1.1" 2.022, ::1, "http://localhost:8079/", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36", 50, "Internal Error", ""
+Stack:
+1. exception recovered
+   1).  go_blog/internal/controller.cUser.Login
+        D:/goland_code/go_blog/internal/controller/user.go:24
+   2).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:152
+   3).  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_func.go:55
+   4).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:129
+   5).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.4
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:90
+   6).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:89
+   7).  github.com/gogf/gf/v2/util/gutil.TryCatch
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/util/gutil/gutil.go:56
+   8).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:49
+   9).  go_blog/internal/logic/middleware.(*sMiddleware).ResponseHandler
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:59
+   10). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:96
+   11). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:95
+   12). go_blog/internal/logic/middleware.(*sMiddleware).I18NMiddleware
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:54
+   13). go_blog/internal/logic/middleware.(*sMiddleware).Ctx
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:104
+   14). go_blog/internal/logic/middleware.(*sMiddleware).MiddlewareCORS
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:94
+   15). github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_middleware_tracing.go:78
+   16). github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_server_handler.go:132
+2. runtime error: invalid memory address or nil pointer dereference
+
+2023-01-04 14:21:36.214 {bccc0200d4063717f2c33435a716fc87} 500 "POST http localhost:8090 /admin/login HTTP/1.1" 2.020, ::1, "http://localhost:8079/", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36", 50, "Internal Error", ""
+Stack:
+1. exception recovered
+   1).  go_blog/internal/controller.cUser.Login
+        D:/goland_code/go_blog/internal/controller/user.go:24
+   2).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:152
+   3).  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_func.go:55
+   4).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:129
+   5).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.4
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:90
+   6).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:89
+   7).  github.com/gogf/gf/v2/util/gutil.TryCatch
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/util/gutil/gutil.go:56
+   8).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:49
+   9).  go_blog/internal/logic/middleware.(*sMiddleware).ResponseHandler
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:59
+   10). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:96
+   11). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:95
+   12). go_blog/internal/logic/middleware.(*sMiddleware).I18NMiddleware
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:54
+   13). go_blog/internal/logic/middleware.(*sMiddleware).Ctx
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:104
+   14). go_blog/internal/logic/middleware.(*sMiddleware).MiddlewareCORS
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:94
+   15). github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_middleware_tracing.go:78
+   16). github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_server_handler.go:132
+2. runtime error: invalid memory address or nil pointer dereference
+
+2023-01-04 14:21:48.434 {dc18b1d8d6063717f3c334352513a552} 500 "POST http localhost:8090 /admin/login HTTP/1.1" 2.015, ::1, "http://localhost:8079/", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36", 50, "Internal Error", ""
+Stack:
+1. exception recovered
+   1).  go_blog/internal/controller.cUser.Login
+        D:/goland_code/go_blog/internal/controller/user.go:24
+   2).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:152
+   3).  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_func.go:55
+   4).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:129
+   5).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.4
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:90
+   6).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:89
+   7).  github.com/gogf/gf/v2/util/gutil.TryCatch
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/util/gutil/gutil.go:56
+   8).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:49
+   9).  go_blog/internal/logic/middleware.(*sMiddleware).ResponseHandler
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:59
+   10). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:96
+   11). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:95
+   12). go_blog/internal/logic/middleware.(*sMiddleware).I18NMiddleware
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:54
+   13). go_blog/internal/logic/middleware.(*sMiddleware).Ctx
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:104
+   14). go_blog/internal/logic/middleware.(*sMiddleware).MiddlewareCORS
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:94
+   15). github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_middleware_tracing.go:78
+   16). github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_server_handler.go:132
+2. runtime error: invalid memory address or nil pointer dereference
+
+2023-01-04 14:23:42.778 {84339977f1063717f4c33435cd6c7825} 500 "POST http localhost:8090 /admin/login HTTP/1.1" 2.024, ::1, "http://localhost:8079/", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36", 50, "Internal Error", ""
+Stack:
+1. exception recovered
+   1).  go_blog/internal/controller.cUser.Login
+        D:/goland_code/go_blog/internal/controller/user.go:24
+   2).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:152
+   3).  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_func.go:55
+   4).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:129
+   5).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.4
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:90
+   6).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:89
+   7).  github.com/gogf/gf/v2/util/gutil.TryCatch
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/util/gutil/gutil.go:56
+   8).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:49
+   9).  go_blog/internal/logic/middleware.(*sMiddleware).ResponseHandler
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:59
+   10). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:96
+   11). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:95
+   12). go_blog/internal/logic/middleware.(*sMiddleware).I18NMiddleware
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:54
+   13). go_blog/internal/logic/middleware.(*sMiddleware).Ctx
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:104
+   14). go_blog/internal/logic/middleware.(*sMiddleware).MiddlewareCORS
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:94
+   15). github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_middleware_tracing.go:78
+   16). github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_server_handler.go:132
+2. runtime error: invalid memory address or nil pointer dereference
+
+2023-01-04 14:24:41.013 {9c729106ff063717f5c334358dbf58e0} 500 "POST http localhost:8090 /admin/login HTTP/1.1" 2.025, ::1, "http://localhost:8079/", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36", 50, "Internal Error", ""
+Stack:
+1. exception recovered
+   1).  go_blog/internal/controller.cUser.Login
+        D:/goland_code/go_blog/internal/controller/user.go:24
+   2).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:152
+   3).  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_func.go:55
+   4).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:129
+   5).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.4
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:90
+   6).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:89
+   7).  github.com/gogf/gf/v2/util/gutil.TryCatch
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/util/gutil/gutil.go:56
+   8).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:49
+   9).  go_blog/internal/logic/middleware.(*sMiddleware).ResponseHandler
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:59
+   10). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:96
+   11). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_request_middleware.go:95
+   12). go_blog/internal/logic/middleware.(*sMiddleware).I18NMiddleware
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:54
+   13). go_blog/internal/logic/middleware.(*sMiddleware).Ctx
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:104
+   14). go_blog/internal/logic/middleware.(*sMiddleware).MiddlewareCORS
+        D:/goland_code/go_blog/internal/logic/middleware/middleware.go:94
+   15). github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_middleware_tracing.go:78
+   16). github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+        C:/Users/hongji/go/pkg/mod/github.com/gogf/gf/v2@v2.2.5/net/ghttp/ghttp_server_handler.go:132
+2. runtime error: invalid memory address or nil pointer dereference
+
