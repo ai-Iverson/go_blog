@@ -4,7 +4,6 @@ import (
 	"context"
 	"github.com/gogf/gf/v2/encoding/ghash"
 	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/os/glog"
 	"github.com/gogf/gf/v2/os/gtime"
 	"github.com/gogf/gf/v2/util/gconv"
 	"go_blog/internal/dao"
@@ -75,8 +74,55 @@ func (s *sComment) Comment(ctx context.Context, in model.CommentInput) (err erro
 }
 
 func (s *sComment) CommentList(ctx context.Context) (out *model.CommentListOutput, err error) {
-	requestPayload := g.RequestFromCtx(ctx).GetMap()
-	res, _ := dao.Comment.Ctx(ctx).Where(dao.Comment.Columns().BlogId, requestPayload["blogId"]).All()
-	glog.Info(ctx, res)
+	out = &model.CommentListOutput{}
+	r := g.RequestFromCtx(ctx)
+	requestPayload := r.GetMap()
+
+	// 查询所有一评论
+	res := dao.Comment.Ctx(ctx).Where(dao.Comment.Columns().BlogId, requestPayload["blogId"]).Where(dao.Comment.Columns().ParentCommentId, -1).OrderDesc(dao.Comment.Columns().CreateTime)
+	result, err := res.Where(dao.Comment.Columns().IsPublished, true).Page(gconv.Int(requestPayload["pageNum"]), gconv.Int(requestPayload["pageSize"])).All()
+
+	// 总评论数
+	countComment, _ := res.Count()
+	out.AllComment = gconv.Int(countComment)
+
+	// 隐藏评论总数
+	closeComment, _ := res.Where(dao.Comment.Columns().IsPublished, false).Count()
+	out.CloseComment = gconv.Int(closeComment)
+
+	// 总页数(去除隐藏评论)
+	pageInfo := r.GetPage(gconv.Int(countComment)-gconv.Int(closeComment), gconv.Int(requestPayload["pageSize"]))
+	out.Comments.TotalPage = pageInfo.TotalPage
+
+	gconv.Scan(result, &out.Comments.List)
+
+	//查找子评论
+	for i := 0; i < len(out.Comments.List); i++ {
+		s.FindReplyComments(ctx, &out.Comments.List[i])
+	}
+
 	return
+}
+
+func (s *sComment) FindReplyComments(ctx context.Context, comment *model.List) {
+	var replyComments []model.List
+	// 查找评论的子评论
+	res, _ := dao.Comment.Ctx(ctx).Where(dao.Comment.Columns().ParentCommentId, comment.ID).All()
+
+	if res == nil {
+		comment.ReplyComments = []model.List{}
+	} else {
+		gconv.Scan(res, &replyComments)
+		for j := 0; j < len(replyComments); j++ {
+			com := &entity.Comment{}
+			ss, _ := dao.Comment.Ctx(ctx).Where(dao.Comment.Columns().Id, replyComments[j].ParentCommentID).One()
+			gconv.Scan(ss, &com)
+			replyComments[j].ParentCommentNickname = com.Nickname
+		}
+		comment.ReplyComments = replyComments
+		for i := 0; i < len(replyComments); i++ {
+			// 递归
+			s.FindReplyComments(ctx, &replyComments[i])
+		}
+	}
 }
