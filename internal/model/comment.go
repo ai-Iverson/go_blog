@@ -17,16 +17,16 @@ type CommentListOutput struct {
 	CloseComment int      `json:"closeComment"`
 }
 type List struct {
-	ID                    int           `json:"id"`
-	Nickname              string        `json:"nickname"`
-	Content               string        `json:"content"`
-	Avatar                string        `json:"avatar"`
-	CreateTime            string        `json:"createTime"`
-	Website               string        `json:"website"`
-	AdminComment          bool          `json:"adminComment"`
-	ParentCommentID       string        `json:"parentCommentId"`
-	ParentCommentNickname interface{}   `json:"parentCommentNickname"`
-	ReplyComments         []interface{} `json:"replyComments"`
+	ID                    int    `json:"id"`
+	Nickname              string `json:"nickname"`
+	Content               string `json:"content"`
+	Avatar                string `json:"avatar"`
+	CreateTime            string `json:"createTime"`
+	Website               string `json:"website"`
+	AdminComment          bool   `json:"adminComment"`
+	ParentCommentID       string `json:"parentCommentId"`
+	ParentCommentNickname string `json:"parentCommentNickname"`
+	ReplyComments         []List `json:"replyComments"`
 }
 type Comments struct {
 	TotalPage int    `json:"totalPage"`
